@@ -1,0 +1,591 @@
+\input texinfo @c -*- texinfo -*-
+
+@c ==================================================
+@c NAME:    CYB003x.twjr
+@c VERSION: 2018-08-09 VERSION 0.0.1|
+@c DESC:    UWashingtonX: CYB003x Building a Cybersecurity Toolkit
+@c BY:      LOLH
+@c NOTES:   https://courses.edx.org/courses/course-v1:UWashingtonX+CYB003x+2T2018/course/
+@c ==================================================
+
+@c %**start of header
+@c edit
+@setfilename CYB003x.info
+@c edit
+@settitle Building a Cybersecurity Toolkit
+@c %**end of header
+
+@c ====================
+@c texiwebjr specials
+@c ====================
+@c Changes how xref titles are quoted.
+@dquotexrefs
+
+@c Lets braces in index entries work.
+@allowindexbraces
+
+@ifclear FORPRINT
+@pdflinkcolor
+@urllinkcolor
+@hideurls
+@end ifclear
+
+@c some special symbols
+@ifnottex
+@macro ii{text}
+@i{\text\}
+@end macro
+@end ifnottex
+
+@c merge the function and variable indexes into the concept index
+@c do so without the code font, and in the index entries do the
+@c font management ourselves.  Also merge in the chunk definition
+@c and reference entries, which jrweave creates for us.
+@ifnothtml
+@synindex fn cp
+@synindex vr cp
+@synindex cd cp
+@synindex cr cp
+@end ifnothtml
+
+@c ====================
+@c DOCUMENT CONSTANTS
+@c ====================
+@set UPDATE-MONTH AUG, 2018
+@set EDITION 0.1
+@set AUTHOR LOLH
+@set TITLE UWashingtonX: CYB003x Building a Cybersecurity Toolkit
+@set SHORTTITLE Cybersecurity Toolkit
+@set SUBTITLE CYB003x
+@set COPYRIGHT_YEAR 2018
+@set COPYRIGHT_HOLDER LOLH
+
+@iftex
+@set DOCUMENT book
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end iftex
+@ifhtml
+@set DOCUMENT Web page
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end ifhtml
+@ifinfo
+@set DOCUMENT Info file
+@set CHAPTER major node
+@set APPENDIX major node
+@set SECTION minor node
+@set SUBSECTION node
+@end ifinfo
+@ifdocbook
+@set DOCUMENT book
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end ifdocbook
+
+@c ====================
+@c FINALOUT
+@c ====================
+@c If "finalout" is commented out, the printed output will show
+@c black boxes that mark lines that are too long.  Thus, it is
+@c unwise to comment it out when running a master in case there are
+@c overfulls which are deemed okay.
+
+@iftex
+@c |@finalout|
+@end iftex
+
+@c ====================
+@c SUMMARY & COPYRIGHT INFORMATION
+@c ====================
+@copying
+@c insert a short summary describing and identifying this document in a
+@c sentence or two, and add the copyright notice and copying permisions
+
+This document is @value{TITLE} @sp 2
+This document does @dots{}
+
+Copyright @copyright{} @value{COPYRIGHT_YEAR} LOLH @*
+by @value{COPYRIGHT_HOLDER} @*
+All Rights Reserved
+
+@quotation
+Permission is granted to @dots{}
+@end quotation
+
+@sp 2
+This is Edition @value{EDITION} of @cite{@value{TITLE}}.
+
+@c use @insertcopying later to 'emit' this copying information in a TeX
+@c or plain text document; add to the Top node for use in Info or HTML file
+@end copying
+
+@c ====================
+@c TITLEPAGE, COPYRIGHT PAGE, TOC PAGE, HEADINGS
+@c ====================
+@titlepage
+
+@title @value{TITLE}
+@subtitle @value{SUBTITLE}
+@c @subtitle Additional Subtitle
+@author @value{AUTHOR}
+
+@c place the copyright information on the backside of the titlepage
+@c (printed manual only)
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by @dots{}
+
+@end titlepage
+@c page numbering and headings start after end of titlepage
+
+@iftex
+@headings off
+@evenheading @thispage @| @value{DRAFT} @| @strong{@value{SHORTTITLE}}
+@oddheading  @strong{@thischapter} @| @value{DRAFT} @| @thispage
+@end iftex
+
+@c TOC in the printed manual
+@c consider placing TOC after the main menu
+@c consider including summarycontents here or after main menu
+@c @summarycontents
+@contents
+
+@c ====================
+@c TOP NODE, MASTER MENU
+@c ====================
+@ifnottex
+@ifnotdocbook
+@ifnotxml
+@node Top
+@top CYB003x Cybersecurity Toolkit
+
+@insertcopying
+@end ifnotxml
+@end ifnotdocbook
+@end ifnottex
+
+@c ====================
+@c START OF BODY
+@c ====================
+
+@c Preface and Foreward come right after Top node in 'unnumbered' sections
+@c consider commenting out Foreward and Preface
+@menu
+
+@detailmenu
+ --- The Detailed Node Listing ---
+
+@end detailmenu
+@end menu
+
+@node Course Introduction
+@unnumbered Introduction to the Course
+
+@node Welcome
+@unnumberedsec Welcome to the Course
+
+Welcome to @cite{Building Your Cybersecurity Toolkit}.
+
+We are pleased to  welcome you to @cite{Building Your Tool  Kit}. This is the
+third  of four  self-paced courses  that make  up our  certificate series  on
+@cite{Essentials of Cybersecurity}. Course 4 will open Oct. 30.  You may take
+the courses in any order.
+
+@node About
+@unnumberedsubsec About this Course
+
+@node Building
+@unnumberedsubsubsec Building Your Cybersecurity Tool Kit
+
+@cite{Building  Your Cybersecurity  Tool  Kit}  is the  third  course in  the
+@cite{Essentials  of  Cybersecurity  UWashingtonX  Professional  Certificate}
+series.  If  taken in the series,  this course extends the  knowledge base of
+core  cyber  security principles  in  historical  context for  those  perhaps
+seeking a career path in cybersecurity.
+
+Technologies are  always defeatable. If  you own an information  asset that’s
+valuable enough  to the right  adversary, it’s only  a matter of  time before
+there’s  a breach.  Therefore,  while today’s  technologies  attempt to  keep
+adversaries out, the sad fact is they will inevitably be defeated. That means
+the successful  cybersecurity professional has  an expanded arsenal  in their
+toolkit that extends far beyond technical proficiency.
+
+There are so many different pathways in cybersecurity for meaningful careers.
+The best ways to determine your ideal pathway is, first to find your passion;
+then to develop a clear understanding of what you would be doing daily in any
+particular job.  Emphasis in the Professional Cybersecurity Toolkit is on the
+importance  of continual  learning while  pursuing pathways  in this  dynamic
+career.
+
+@node Learning Objectives
+@unnumberedsubusbsec Learning Objectives
+
+@itemize
+@item
+Identify  what tools  and rules  are necessary  to form  today’s Professional
+Cybersecurity toolkit;
+@item
+Match appropriate tools to different purposes in the cybersecurity management
+process;
+@item
+Synthesize  insights gained  in  course exploration  of  toolkit skill  sets,
+working  toward   self-evaluation  of   talents  and  interests   aligned  to
+cybersecurity’s array of roles
+@end itemize
+
+@node Certification
+@unnumberedsubsec Certification
+
+Learners  who have  upgraded  to verified  and achieved  a  passing grade  in
+@cite{Building  a Cybersecurity  Toolkit} will  earn a  Verified Certificate.
+The verified certificate  indicates that you have  successfully completed the
+course,  but will  not include  a specific  grade.  Many  students add  their
+certificates to their resume, CV,  or LinkedIn profile to demonstrate mastery
+of a  given subject area to  potential employers. Certificates are  issued by
+edX  under the  name of  University of  Washington and  are delivered  online
+through your dashboard on edx.org.
+
+The Verified Certificate  costs $99/course to administer and  requires you to
+complete the  ID verification process. That  means that you must  verify your
+identity with  a webcam and  a government-issued  photo ID. Click  Upgrade to
+Verified  under the  course  name  on your  edX  dashboard  to complete  this
+process.
+
+If  you are  interested in  earning a  University of  Washington professional
+certificate  in  @cite{Essentials  of  Cybersecurity},  you  must  receive  a
+Verified Certificate in each of the four program courses:
+
+@itemize
+@item
+@cite{Introduction to Cybersecurity}
+@item
+@cite{Cybersecurity: The CISO's View}
+@item
+@cite{Building a Cybersecurity Toolkit}
+@item
+@cite{Finding Your Cybersecurity Career Path}
+@end itemize
+
+We urge you to consider the  Verified Certificate option --- you have limited
+time to  become a  Verified Certificate  student.  See the  edX FAQ  for more
+details on certificates.
+
+@node Structure and Requirements
+@unnumberedsec Course Structure and Requirements
+
+@node Layout
+@unnumberedsubsec Understanding the Layout
+
+@node Organization
+@unnumberedsubsubsec Organization
+
+This course is divided into sections called @emph{Modules}. You can expect to
+spend about 2 - 5 hours on the course content per module, or week.
+
+Within each Module are topics, or Parts.
+
+Within each topic, or part, are  course content pages which may include text,
+video,  and  interactive activities  (such  as  discussion forums,  knowledge
+checks, or polls) for  you to complete. If an activity is  linked to a video,
+you might  see a  title "Watch  and Answer."  For resource  exploration areas
+linked to course discussions, you might see "Explore and Discuss."
+
+@node Help
+@unnumberedsubsec Getting Help
+
+This is a self-paced course with other learners experiencing the same content
+you are, so you're  never quite alone and there are  avenues at your disposal
+if you need help!
+
+@bullet{} To get  help with this course, click the  @emph{Discussion} tab and
+post a question to the General Discussion Forum.
+
+@bullet{} To get help with a technical  problem, click Help to send a message
+to @emph{edX Student Support}.
+
+@node Introducing Teacher
+@unnumberedsec Introducing David Aucsmith, Guest Instructor
+
+@url{http://www.apl.washington.edu/people/profile.php?last_name=Aucsmith&first_name=David,,
+David Aucsmith, Senior Principal  Research Scientist and Affiliate Professor,
+University  of  Washington},  has  over  30  years  experience  in  industry,
+government, and  academia as a  computer scientist and technology  leader. He
+has worked  in a variety  of security  and technology areas  including secure
+computer  systems,  secure  communications  systems,  security  architecture,
+random   number   generation,   cryptography   and   cryptographic   systems,
+steganography and  network intrusion  detection.  He is  a former  U.S.  Navy
+officer and has written extensively on cybercrime, cyber espionage, and cyber
+warfare. He has been a  representative to numerous international, government,
+and  academic  organizations and  is  co-chairman  of the  FBI's  Information
+Technology Study  Group, a member of  the President's Task Force  on National
+Defense and Computer  Technology and a member of the  Department of Defense's
+Global  Information  Grid  Senior  Industry  Review Group.   He  was  also  a
+U.S. industry representative to the  G8 Committee on Organized, Transitional,
+and Technological Crime and participated directly in the G8 Summits in Paris,
+Berlin, and Tokyo. He  holds 33 patents for digital security  and is a member
+of the advisory  board for the College of Computing  at the Georgia Institute
+of Technology.   He also lectures  at the  Naval Postgraduate School  and the
+U.S. Air Force Air War College.
+
+Dr. Barbara Endicott-Popovsky talked with David recently when he agreed to do
+a series of lectures for this course, helping to contextualize the evolution
+and present concerns of cybersecurity for those thinking about a career.  
+
+@node Evolution of Internet Security
+@chapter The Evolution of Internet Security
+
+Chapter one...
+
+@node Video: Evolution of Cybersecurity
+@section Video: The Evolution of Cybersecurity
+
+Chapter One Section one...
+
+@node Knowledge checks Evolution
+@section Knowledge Checks for Evolution of Internet Security
+
+@node Basic Knowledge Units
+@chapter Basic Knowledge Units
+
+@node Risk Data Tools
+@chapter Rist, Data, and Tools
+
+@node Threat Intelligence
+@chapter Threat Intelligence and the Hunt
+
+@node Summary
+@unnumbered Course Summary
+
+@c ====================
+@c APPENDICES
+@c ====================
+
+@node Appendix One
+@appendix Appendix One
+
+@node Meta Appendix
+@appendix Meta (Makefile) Appendix
+
+@node Makefile Definitions
+@appendixsec Makefile Initial Definitions
+
+@(Makefile@)=
+@<Makefile Constants@>
+@<Makefile Default Targets@>
+@<Makefile Tangle@>
+@<Makefile Weave@>
+@<Makefile Info@>
+@<Makefile Clean@>
+@<Makefile Dist Clean@>
+@<Makefile Directory Creation@>
+@<Makefile Move Hook@>
+@<Makefile Move JS To Source@>
+@<Makefile Move HTML@>
+@
+
+@node Makefile Constants
+@appendixsubsec Makefile Constant Definitions
+
+@<Makefile Constants@>=
+@<Makefile Directory Definitions@>
+@<Makefile Filename Definitions@>
+@
+
+@node Directory Definitions
+@appendixsubsubsec Makefile Directory Definitions
+
+@<Makefile Directory Definitions@>=
+PREFIX := .
+SOURCE_DIR := ${PREFIX}/src
+PUBLIC_DIR := ${PREFIX}/public
+HTML_DIR := ${PREFIX}/html
+
+@
+
+@node Filename Definitions
+@appendixsubsubsec Makefile Filename Definitions
+
+@<Makefile Filename Definitions@>=
+FILENAME := twjrtemplate
+TWJR_FILENAME := ${FILENAME}.twjr
+TEXI_FILENAME := ${FILENAME}.texi
+INFO_FILENAME := ${FILENAME}.info
+
+@
+
+@node Makefile Default Targets
+@appendixsubsec Makefile Default Targets
+
+@<Makefile Default Targets@>=
+.Phony : all
+all : tangle weave
+
+@
+
+@node Makefile Tangle
+@appendixsubsubsec Makefile Tangle
+
+@<Makefile Tangle@>=
+.Phony : tangle
+tangle :
+	jrtangle ${TWJR_FILENAME}
+
+@
+
+@node Makefile Weave
+@appendixsubsubsec Meta Weave
+
+@<Makefile Weave@>=
+.Phony : weave
+weave : ${TEXI_FILENAME}
+
+${TEXI_FILENAME} : ${TWJR_FILENAME}
+	jrweave ${TWJR_FILENAME} > ${TEXI_FILENAME}
+
+@
+
+@node Makefile Info
+@appendixsubsubsec Makefile Info
+
+@<Makefile Info@>=
+.Phony : info
+info : ${INFO_FILENAME}
+
+${INFO_FILENAME} : ${TEXI_FILENAME}
+	makeinfo ${TEXI_FILENAME}
+
+@
+
+@node Makefile Clean Targets
+@appendixsubsec Makefile Clean Targets
+
+@node Makefile Clean
+@appendixsubsubsec Makefile Clean Definition
+
+@<Makefile Clean@>=
+.Phony : clean
+clean :
+	rm -f *~
+
+@
+
+@node Makefile Dist Clean
+@appendixsubsubsec Meta Dist Clean Definition
+
+@<Makefile Dist Clean@>=
+.Phony : dist-clean
+dist-clean : clean
+	rm -f *.texi
+	rm -f *.info
+
+@
+
+@node Makefile Directory Creation
+@appendixsubsec Makefile Directory Creation Targets
+
+@<Makefile Directory Creation@>=
+.Phony : ${SOURCE_DIR}
+${SOURCE_DIR} :
+	mkdir -p ${SOURCE_DIR}
+
+.Phony : ${PUBLIC_DIR}
+${PUBLIC_DIR} :
+	mkdir -p ${PUBLIC_DIR}
+
+.Phony : ${HTML_DIR}
+${HTML_DIR} :
+	mkdir -p ${HTML_DIR}
+
+@
+
+@node Makefile Move Targets
+@appendixsubsec Makefile Move Targets
+
+@node Makefile Move Hook
+@appendixsubsubsec Makefile Move Hook
+
+Use this hook for moving files to a different directory
+than Source; it will execute just prior to the next
+code block moving all .js files to Source.
+
+@<Makefile Move Hook@>=
+@
+
+@node Makefile Move JS
+@appendixsubsubsec Makefile Move JS To Source
+
+@<Makefile Move JS To Source@>=
+.Phony : move-js-to-source
+move-js-to-source : | ${SOURCE_DIR}
+	find ${PREFIX} -depth=1 -name \*.js -exec mv {} ${SOURCE_DIR} \;
+
+@
+
+@node Makefile Move HTML
+@appendixsubsubsec Makefile Move HTML
+
+@<Makefile Move HTML@>=
+.Phony : move-html
+move-html : | ${HTML_DIR}
+	find ${PREFIX} -depth=1 -name \*.html -exec mv {} ${HTML_DIR}\;
+
+@
+
+@node Code Chunk Summaries
+@appendix Code Chunk Summaries
+
+This @value{APPENDIX} presents alphabetical lists of
+all the file definitions, the code chunk definitions,
+and the code chunk references.
+
+@node File Definitions
+@appendixsec Source File Definitions
+
+@print_file_defs
+
+@node Code Chunk Definitions
+@appendixsec Code Chunk Definitions
+
+@print_code_defs
+
+@node Code Chunk References
+@appendixsec Code Chunk References
+
+@print_code_refs
+
+@c ====================
+@c BIBLIOGRAPHY; INDEX; END
+@c ====================
+
+@node Bibliography
+@unnumbered Bibliography
+
+@node Concept Index
+@unnumbered Index
+
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@bye
+
+@c ====================
+@c TODOs
+@c ====================
+
+1. Create a script to fill in named variables
+1.1 twjr
+1.1.1 init [--dir <directory>]
+1.1.2 config
+1.1.3 weave [--info --pdf --html --xml --docbook]
+1.1.4 tangle [--file <filename>]
