@@ -54,9 +54,9 @@
 @set UPDATE-MONTH AUG, 2018
 @set EDITION 0.1
 @set AUTHOR LOLH
-@set TITLE UWashingtonX: CYB003x Building a Cybersecurity Toolkit
+@set TITLE Building A Cybersecurity Toolkit
 @set SHORTTITLE Cybersecurity Toolkit
-@set SUBTITLE CYB003x
+@set SUBTITLE edX UWashingtonX: CYB003x
 @set COPYRIGHT_YEAR 2018
 @set COPYRIGHT_HOLDER LOLH
 
@@ -66,6 +66,7 @@
 @set APPENDIX appendix
 @set SECTION section
 @set SUBSECTION subsection
+@set DRAFT Draft
 @end iftex
 @ifhtml
 @set DOCUMENT Web page
@@ -108,15 +109,15 @@
 @c insert a short summary describing and identifying this document in a
 @c sentence or two, and add the copyright notice and copying permisions
 
-This document is @value{TITLE} @sp 2
-This document does @dots{}
+This document is @cite{@value{TITLE}} @sp 2
+This document outlines the edX course of the same name.
 
 Copyright @copyright{} @value{COPYRIGHT_YEAR} LOLH @*
 by @value{COPYRIGHT_HOLDER} @*
 All Rights Reserved
 
 @quotation
-Permission is granted to @dots{}
+Permission is granted to read and enjoy this text.
 @end quotation
 
 @sp 2
@@ -168,7 +169,8 @@ Published by @dots{}
 @node Top
 @top CYB003x Cybersecurity Toolkit
 
-@insertcopying
+@c Remove comment to insert copying info in Info file
+@c @insertcopying
 @end ifnotxml
 @end ifnotdocbook
 @end ifnottex
@@ -227,7 +229,7 @@ importance  of continual  learning while  pursuing pathways  in this  dynamic
 career.
 
 @node Learning Objectives
-@unnumberedsubusbsec Learning Objectives
+@unnumberedsubsubsec Learning Objectives
 
 @itemize
 @item
@@ -340,27 +342,981 @@ Dr. Barbara Endicott-Popovsky talked with David recently when he agreed to do
 a series of lectures for this course, helping to contextualize the evolution
 and present concerns of cybersecurity for those thinking about a career.  
 
-@node Evolution of Internet Security
-@chapter The Evolution of Internet Security
+@node Module 1 - Evolution of Internet Security
+@chapter Module 1 --- The Evolution of Internet Security
 
-Chapter one...
+How did we get here? The evolution of cybersecurity.
 
-@node Video: Evolution of Cybersecurity
-@section Video: The Evolution of Cybersecurity
+@node Videos -- Evolution
+@section Three Videos on the Evolution of Cybersecurity
 
-Chapter One Section one...
+@node Video 1 - Inherent Princples
+@subsection Video 1 --- Inherent Princples
+
+The Internet was designed to not have a central point of authority, and for
+each component in the network to do its best efforts to send messages, or to
+do connectivity, or to understand its nearest neighbors.
+
+Because of that early design, there are a few inherent principles that did
+not turn out quite the way we would have liked them to had we invented it
+with its final end in mind.
+
+@itemize
+@item
+Everything is @emph{best effort}; each node essentially only knows about
+those around it, and it makes best effort to deliver those messages.
+@item
+No requirement for the systems to maintain things about how they sent
+things.  So all data describing how things move in the Internet is
+essentially ephemeral.  Easy to ask how will something be routed; difficult
+to ask how something did get routed.
+@item
+Number of places where the Internet is ambigous about how it delivers
+things.  A good example is if you have multiple paths leading between two
+nodes, based on congestion and latency, it may choose one path one time and a
+differnt path another time.
+@item
+No central authentication built into it; the Internet itself has no principle
+of authentication.  All authentication principles are essentially layered on
+top of that.
+@item
+At any given time, the Internet builds on itself and assumes additional
+functionality or sophistication because of all the things that have been
+added to it.  There is an inherent growth in the capabilities of it just
+because of the interconnectivity.  You can say, I've got all of these pieces;
+what can I do with them?  But it is very difficult to look the other way and
+say, this occurred; what are all the pieces that are necessary to put that
+back together?
+@end itemize
+
+@node Video 2 - Codifying Internet Security
+@subsection Video 2 --- Codifying Internet Security
+
+In the beginning, there was no DHCP as we know it; there as no DNS as we know
+it.  One had to literally hard code address packets to send them from one
+node to another, rather than have a centralized table to look up addresses.
+
+Over time we've added protocols on top of the base protocols to help manage
+the process (mess), like DNS, so we don't have to remember the numbers.  Also
+added something called @emph{border gateway protocol}, which retains some
+information about who a particular node talks to, what are the best paths and
+conditions on those paths.
+
+When the Internet became commercialized, and when things got connectd on
+networks, one of the first things people discovered is that the Internet had
+never assumed duplicity in any of its components.  It had assumed failure,
+but not duplicity.  So there was nothing inherently built into it to
+distinguish when someone was actively trying to make it misbehave or do
+things that it was not designed to do.  The government then began to look for
+ways to deal with duplicity and the anonymity issues, to know what's going on
+and how to find people or entities that are misbehaving on it.
+
+One of the earliest attempts (which should be required reading for anybody in
+the field) is called the @cite{Trusted Computer Security Evaluation
+Criteria}, known as the @acronym{TCSEC}, or @emph{Orange Book} (1985).  It
+was a joint publication of the NSA and NIST.  It was a first attempt to
+codify what a secure computer system looks like.  A lot of the principles
+that we now take for granted in computer security, such as the triad of
+secrecy, integrity, and availability, come out of the Orange Book, as well as
+mandatory access control and discretionary access control, and notions of
+audit and secure boot, etc.
+
+It was designed for closed systems (people would modem into a system) rather
+than the general network availability that we now have.  While the Orange
+Book was a brilliant theoretical work, it has almost no practical value
+because as soon as it was completed, it was out of date because we had
+plugged networks into all the systems that the TCSEC was attempted to secure.
+
+More attempts were made to migrate that work over to a networked world; the
+first was called the @cite{Red Book}.  It was also a good theoretical work,
+but not very practical.  It assumed that when you changed something, you
+revalidated the system, which doesn't work in a networked world.
+
+The other problem was that we had assumed that attackes would be external to
+the system, rather than internal, such as attacking bad programming errors.
+The systems met the tests or criteria that were set up, but they were not
+therefore secure.  The problem is not simply determining that the system as
+designed meets the specification, but where the system as designed exceeds
+the specification (a buffer overrun, for example, is an additional entry
+point not in the specification).  Looking for that type of problem is
+basically, in math, an NP complete problem, or its similar to an NP complete
+problem.  There is essentially no way to guarantee that you have found that.
+It is like asking yourself what it is that you do not know.
+
+@node Video 3 - Assumption of Breach
+@subsection Video 3 --- Assumption of Breach
+
+As a result of the evolution of what was designed to be a simple, closed,
+benign service into a global network that is far too complex to analyze, we
+had to change our assumptions to assuming that the system is broken, or will
+be breached, or is breached, and decide how to operate a system given that
+particular assumption.
+
+Systems don't break --- they are attacked.  Airplanes get shot down.  Is it
+possible to build an airplane that cannot be shot?  This is a classic arms
+race.  What is certain about classic arms races is that anything static will
+fail.  Therefore, we must constantly evolve.
+
+We are building systems that are far too complex for us to understand.  In
+computer science, we are building systems whose complete architecture is not
+knowable.  What this means is that, for any given input into a system, I
+cannot tell you the output that will be caused in all possible states of that
+system.  We have an unknowable system.  Therefore, I have this system that I
+can't completely specify and understand, and I'm placing it in front of a
+dedicated adversary.  That guarantees that the system will be breached at
+some point, so we have to start with the assumptions of breach.
+
+We must shift our thinking to building systems that are adaptable,
+transformable, in the presence of adversary behavior.  This is not the same
+thing as say abandon firewalls or perimeter defenses; they are still needed.
+
+@node Reading - Computers at Risk
+@section Reading Selection: Computers at Risk: Computing In the Information Age (1991)
+
+For this  Module's assessment, first read  this chapter from an  old textbook
+called   @cite{Computers  at   Risk:   Computing  in   the  Information   Age
+(1991)}. Then proceed  to the short response exercise where  you are asked to
+peer-review one peer's response and  self-evaluate your own response. In your
+response, carefully address the prompt.
+
+@node Reading Selection
+@subsection Criteria to Evaluate Computer and Network Security
+
+Characterizing a computer  system as being secure  presupposes some criteria,
+explicit or  implicit, against which  the system  in question is  measured or
+evaluated. Documents such as the National Computer Security Center's (NCSC's)
+Trusted Computer System Evaluation Criteria (TCSEC, or Orange Book; U.S. DOD,
+1985d) and  its Trusted Network Interpretation  (TNI, or Red Book;  U.S. DOD,
+1987), and the harmonized Information Technology Security Evaluation Criteria
+(ITSEC;  Federal  Republic   of  Germany,  1990)  of   France,  Germany,  the
+Netherlands, and the United Kingdom  provide standards against which computer
+and   network   systems  can   be   evaluated   with  respect   to   security
+characteristics. As  described below  in "Comparing National  Criteria Sets,"
+these documents embody  different approaches to security  evaluation, and the
+differences  are  a result  of  other,  perhaps  less obvious  purposes  that
+security evaluation criteria can serve.
+
+This chapter describes the competing  goals that influence the development of
+criteria and  how current criteria  reflect trade-offs among these  goals. It
+discusses how U.S.  criteria should be restructured to  reflect the emergence
+of foreign  evaluation criteria  and the  experience gained  from the  use of
+current NCSC  criteria. While  building on  experience gained  in the  use of
+Orange Book  criteria, the analysis  contributes to  the arguments for  a new
+construct,  Generally  Accepted  System  Security  Principles,  or  GSSP.  As
+recommended by  the committee, GSSP would  provide a broader set  of criteria
+and  drive  a   more  flexible  and  comprehensive   process  for  evaluating
+single-vendor (and conglomerate) systems.
+
+@heading SECURITY EVALUATION CRITERIA IN GENERAL
+
+At a  minimum, security evaluation  criteria provide a standard  language for
+expressing  security characteristics  and  establish an  objective basis  for
+evaluating a product relative to these characteristics. Thus one can critique
+such criteria based on how well security characteristics can be expressed and
+evaluated relative to  the criteria. Security evaluation  criteria also serve
+as frameworks for  users (purchasers) and for vendors.  Users employ criteria
+in  the selection  and  acquisition  of computer  and  network products,  for
+example, by relying on independent  evaluations to validate vendor claims for
+security and  by using ratings as  a basis for concisely  expressing computer
+and network security  requirements. Vendors rely on criteria  for guidance in
+the  development of  products  and  use evaluations  as  a  means of  product
+differentiation. Thus  it is  also possible  to critique  security evaluation
+criteria based  on their  utility to  users and vendors  in support  of these
+goals.
+
+These   goals   of   security   evaluation  criteria   are   not   thoroughly
+complementary. Each of the national criteria  sets in use (or proposed) today
+reflects somewhat  different goals  and the trade-offs  made by  the criteria
+developers  relative  to  these  goals.  A  separate  issue  with  regard  to
+evaluating system security is how applicable criteria of the sort noted above
+are  to  complete systems,  as  opposed  to  individual computer  or  network
+products.  This   question  is  addressed  below   in  "System  Certification
+vs.  Product Evaluation."  Before discussing  in  more detail  the goals  for
+product  criteria,  it is  useful  to  examine  the  nature of  the  security
+characteristics addressed in evaluation criteria.
+
+@subheading Security Characteristics
+
+Most  evaluation  criteria reflect  two  potentially  independent aspects  of
+security: functionality  and assurance. Security functionality  refers to the
+facilities by which security services are provided to users. These facilities
+may include,  for example,  various types of  access control  mechanisms that
+allow users  to constrain access  to data, or authentication  mechanisms that
+verify  a  user's  claimed  identity.   Usually  it  is  easy  to  understand
+differences  in  security  functionality,  because  they  are  manifested  by
+mechanisms with which the user interacts (perhaps indirectly). Systems differ
+in the number, type, and combination of security mechanisms available.
+
+In contrast, security assurance often  is not represented by any user-visible
+mechanisms and so can be difficult  to evaluate. A product rating intended to
+describe security assurance expresses an  evaluator's degree of confidence in
+the effectiveness  of the implementation of  security functionality. Personal
+perceptions  of "degree  of confidence"  are  relative, and  so criteria  for
+objectively assessing security assurance  are based primarily on requirements
+for  increasingly rigorous  development  practices, documentation,  analysis,
+configuration management, and testing. Relative degrees of assurance also may
+be indicated  by rankings based  on the  relative strength of  the underlying
+mechanisms (e.g., cryptographic algorithms).
+
+Thus two products that appear to provide the same security functionality to a
+user  may actually  provide  different  levels of  assurance  because of  the
+particulars (e.g.,  relative strength or  quality) of the mechanisms  used to
+implement  the functionality  or because  of differences  in the  development
+methodology, documentation,  or analysis  accorded each  implementation. Such
+differences  in  the  underlying   mechanisms  of  implementation  should  be
+recognized  in  an   evaluation  of  security.  Their   significance  can  be
+illustrated by analogy: two painted picnic  tables may appear to be identical
+outwardly, but one is constructed of pressure-treated lumber and the other of
+untreated lumber.  Although the  functionality of both  with regard  to table
+size and seating capacity is identical,  the former table may be more durable
+than the latter because of the materials used to construct (implement) it.
+
+Another example illustrates more subtle  determinants of assurance. A product
+might be  evaluated as  providing a  high level of  assurance because  it was
+developed by  individuals holding  U.S. government top-secret  clearances and
+working in  a physically secure facility,  and because it came  with reams of
+documentation  detailing the  system  design and  attesting  to the  rigorous
+development practices used.  But an identical product  developed by uncleared
+individuals in  a nonsecured  environment and  not accompanied  by equivalent
+documentation, would probably receive a much lower assurance rating. Although
+the second  product in this example  is not necessarily less  secure than the
+first, an  evaluator probably would have  less confidence in the  security of
+the second  product due to  the lack of  supporting evidence provided  by its
+implementors,  and perhaps,  less confidence  in the  trustworthiness of  the
+implementors themselves.1
+
+Somewhat  analogous is  the contrast  between buying  a picnic  table from  a
+well-known  manufacturer with  a  reputation  for quality  (a  member of  the
+"Picnic  Table Manufacturers  of  America") versus  purchasing  a table  from
+someone who  builds picnic tables  as an  avocation. One may  have confidence
+that  the  former  manufacturer  will use  good  materials  and  construction
+techniques (to protect his corporate image), whereas the latter may represent
+a greater risk (unless one knows the builder or has references from satisfied
+customers),   irrespective   of  the   actual   quality   of  materials   and
+workmanship.  For  computers and  networks,  the  technology is  sufficiently
+complex  that users  cannot,  in general,  personally  evaluate the  security
+assurance and therefore the quality of  the product as they might the quality
+of a picnic table. Even evaluators  cannot thoroughly examine every aspect of
+a  computer system  to the  depth  one would  prefer, hence  the reliance  on
+evidence of good development practices, extensive documentation, and so on.
+
+Security  assurance is  evaluated  in  these indirect  ways  in part  because
+testing,  specification,  and  verification technology  is  not  sufficiently
+mature to  permit more direct rankings  of assurance. In principle  one could
+begin  by specifying,  using a  formal specification  language, the  security
+policies  that  a  target  product  should  implement.  Then  one  could  use
+verification tools  (programs) to  establish the correspondence  between this
+specification   and  a   formal  top-level   specification  (FTLS)   for  the
+product.  This   FTLS  could,  in  turn,   be  shown  to  match   the  actual
+implementation of  the product  in a  (high-level) programming  language. The
+output  of  the compiler  used  to  translate  the high-level  language  into
+executable code would  also have to be shown to  correspond to the high-level
+language. This  process could be  continued to include firmware  and hardware
+modules and logic design if one  were to impose even more stringent assurance
+standards.
+
+As described in Chapter 4  of this report, state-of-the-art specification and
+verification technology does  not allow for such  a thorough, computer-driven
+process  to demonstrate  that  a  computer or  network  correctly supports  a
+security policy. Experience  has shown that there  are numerous opportunities
+for human subversion  of such a process  unless it is carried  through to the
+step that includes  examination of the executable code  (Thompson, 1984), and
+unless extreme measures, currently beyond the  state of the art, are taken to
+ensure  the  correctness  of  the   verification  tools,  compilers,  and  so
+on. Testing  is a useful  adjunct to the process,  but the interfaces  to the
+products of  interest are sufficiently  complex so as to  preclude exhaustive
+testing  to  detect  security  flaws.  Thus  testing  can  contribute  to  an
+evaluator's confidence that security  functionality is correctly implemented,
+but it cannot be the sole basis  for providing a rating based on assurance as
+well. This  explains, in  large part,  the reliance  on indirect  evidence of
+assurance (e.g., documentation requirements, trusted developers, and use of a
+secure development environment).
+
+@subheading Assurance Evaluation
+
+There are actually two stages  of assurance evaluation: design evaluation and
+implementation  evaluation.  Design  evaluation  attempts to  assure  that  a
+particular  proposed system  design  actually provides  the functionality  it
+attempts  rather than  simply appearing  to do  so. Some  early systems  were
+constructed that associated passwords with  files, rather than with users, as
+a form of access control. This  approach gave the appearance of providing the
+required   functionality   but   in   fact   failed   to   provide   adequate
+accountability. This  is an  example of  a design flaw  that would  likely be
+detected and remedied by a design evaluation process.
+
+Design evaluation is insurance against  making a fundamental design error and
+embedding this error  so deeply in a  system that it cannot  later be changed
+for any reasonable  cost. To support the requirement  of confidentiality, the
+possible mechanisms are well enough understood that design evaluation may not
+be needed to ensure a good design. But for newer areas of functionality, such
+as supporting  the requirement for  integrity or secure  distributed systems,
+there is less experience with design options.
+
+This   committee   considers   explicit   design  evaluation   to   be   very
+important. There are many ways to obtain such review, and vendor prudence may
+be  sufficient in  some circumstances  to ensure  that this  step is  part of
+system design. However, in general,  the committee endorses design evaluation
+by an independent team (involving personnel  not employed by the vendor) as a
+standard  part of  secure  system design  and encourages  that  this step  be
+undertaken whenever possible.
+
+Implementation evaluation is also important, but generally is more difficult,
+more time  consuming, and more costly.  For the level of  assurance generally
+required  in the  commercial market,  it  may be  sufficient to  carry out  a
+minimal  implementation  evaluation  (as   part  of  overall  system  quality
+assurance procedures, including initial operational or Beta testing) prior to
+system release  if a good  design evaluation  is performed. Moreover,  if the
+incident  reporting and  tracking  system proposed  in Chapters  1  and 6  is
+instituted, implementation  flaws can be  identified and fixed in  the normal
+course of  system releases.  (Of course,  well-known systems  with well-known
+design flaws  continue to  be used,  and continue to  be penetrated.  But for
+systems with modest security pretensions, many attacks exploit implementation
+flaws that could be corrected  through diligent incident reporting and fixing
+of reported flaws.) By contrast the current implementation evaluation process
+as practiced by NCSC is very time  consuming, and because it must occur after
+implementatio  n,  it  slows  the   delivery  of  evaluated  systems  to  the
+marketplace.2
+
+For systems attempting to conform to a baseline set of GSSP as recommended by
+the committee (see Chapter 1,  "Overview and Recommendations," and Chapter 2,
+"Concepts of  Information Security"),  the committee  recommends that  in the
+short  term a  process of  evaluating installed  systems (field  evaluation),
+rather than the  a priori implementation evaluation now carried  out by NCSC,
+be used to increase the level of implementation quality.
+
+This  process of  field evaluation,  while it  shares the  basic goal  of the
+current NCSC  process, differs  from that  process in  several ways  that the
+committee views as advantageous. First, because such field evaluation is less
+time consuming, it may be viewed as  less onerous than the current method for
+implementation  evaluation.  It  should  also be  less  costly,  which  would
+increase its acceptability. One side effect  is that the early customers of a
+system  subject to  field  evaluation  would not  have  the  full benefit  of
+evaluated security mechanisms,  a situation that would  prompt customers with
+relatively high concern for security to  delay purchase. In exchange for this
+limitation for  early customers, the  system would reach the  market promptly
+and then  continue to improve as  a result of field  experience. This process
+would also  accommodate new releases  and revisions  of a system  more easily
+than the  current NCSC  procedure, the Rating  Maintenance Phase  (RAMP). New
+releases that revise the function of the system should receive an incremental
+design review.  But revisions to fix  bugs would naturally be  covered by the
+normal process  of field testing.  Indeed, it  would be hoped  that revisions
+would follow naturally from the implementation evaluation.
+
+This  field evaluation  process, if  explicitly organized,  can focus  market
+forces in an effective way and  lead to the recognition of outside evaluation
+as a  valuable part  of system  assurance. The  committee is  concerned that,
+outside  of the  DOD, where  the NCSC  process is  mandated, there  is little
+appreciation of  the importance of  evaluation as an explicit  step. Instead,
+the tendency initially is to accept  security claims at face value, which can
+result in a later loss of credibility for a set of requirements. For example,
+customers have  confused a  bad implementation for  a bad  specification, and
+rejected  a specification  when one  system  implemented it  badly. Thus  the
+committee has linked its recommendation for  the establishment of a broad set
+of criteria,  GSSP, with a  recommendation to establish  methods, guidelines,
+and facilities for evaluating products with respect to GSSP.
+
+The committee  believes that the way  to achieve a system  evaluation process
+supported by  vendors and users alike  is to begin with  a design evaluation,
+based on  GSSP itself, and  to follow  up with an  implementation evaluation,
+focusing on  field experience and  incident reporting and  tracking. Incident
+reporting  and tracking  could have  the added  effect of  documenting vendor
+attentiveness  to  security,  educating   customers,  and  even  illuminating
+potential sources of legal liability. Over time,
+
+Page  130  Suggested  Citation:"Criteria  to Evaluate  Computer  and  Network
+Security." National Research Council. 1991. Computers at Risk: Safe Computing
+in the  Information Age. Washington,  DC: The National Academies  Press. doi:
+10.17226/1581. ×
+
+Add a note to your bookmark the following steps might be anticipated: If GSSP
+were instituted, prudent consumers would  demand GSSP-conforming systems as a
+part  of normal  practice.  GSSP  would drive  field  evaluation. If  vendors
+perceived field  evaluation as  helping them in  the marketplace  or reducing
+their liability,  they would come  to support  the process, and  perhaps even
+argue for a stronger implementation evaluation  as a means to obtain a higher
+assurance rating for  systems. Thus GSSP could combine with  market forces to
+promote development of systems evaluated  as having relatively high assurance
+(analogous  to the  higher levels  of the  current Orange  Book), a  level of
+assurance  that today  does not  seem to  be justified  in the  eyes of  many
+vendors  and consumers.  For this  chain of  events to  unfold, GSSP  must be
+embraced by  vendors and  users. To  stimulate the  development of  GSSP, the
+committee  recommends basing  the  initial set  of GSSP  on  the Orange  Book
+(specifically, the committee recommends building from C2 and B1 criteria) and
+possibly   making  conformance   to  GSSP   mandatory  in   some  significant
+applications, such as medical equipment or other life-critical systems.
+
+@subheading Trade-offs in Grouping of Criteria
+
+In developing  product criteria, one  of the primary trade-offs  involves the
+extent  to which  security  characteristics are  grouped  together. As  noted
+above, aspects of security can be divided into two broad types: functionality
+and assurance. Some criteria, for example,  the Orange Book and the TNI, tend
+to ''bundle" together functionality and assurance characteristics to define a
+small  set of  system  security  ratings. Other  criteria,  for example,  the
+proposed  West German  (ZSI) set,  group  characteristics of  each type  into
+evaluation classes  but keep the  two types independent, yielding  a somewhat
+larger  set of  possible ratings.  At  the extreme,  the originally  proposed
+British  (DTI) criteria  (a new  evaluation  scheme for  both government  and
+commercial  systems  has since  been  developed  (U.K. CESG/DTI,  1990))  are
+completely unbundled, defining security  controls and security objectives and
+a language  in which to  formulate claims for how  a system uses  controls to
+achieve the  objectives. Comparisons with the  successor harmonized criteria,
+the ITSEC, which builds on both the ZSI and DTI schemes, are amplified in the
+section below titled "Comparing National Criteria Sets."
+
+One argument in favor of bundling criteria is that it makes life easier for
+evaluators, users, and vendors. When a product is submitted for evaluation, a
+claim is made that it implements a set of security functions with the
+requisite level of assurance for a given rating. The job of an evaluator is
+made easier if the security functions and assurance techniques against which
+a product is evaluated have been bundled 
+
+Bundled  criteria   define  what   their  authors  believe   are  appropriate
+combinations of security  functions and assurance techniques  that will yield
+useful products. This signaling of  appropriate combinations is an especially
+important activity  if users  and vendors  are not  competent to  define such
+combinations on  their own.  Bundled criteria  play a  very powerful  role in
+shaping the marketplace for secure systems, because they tend to dictate what
+mechanisms and assurances  most users will specify in  requests for proposals
+and what vendors will build (in order to match the ratings).
+
+A small number of evaluation ratings  helps channel user demands for security
+to systems that fall  into one of a few rated slots. If  user demands are not
+focused in this fashion, development and evaluation costs cannot be amortized
+over  a large  enough  customer base.  Vendors  can then  be  faced with  the
+prospect of  building custom-designed secure  systems products, which  can be
+prohibitively expensive (and thus diminish demand). Bundled criteria enable a
+vendor  to direct  product  development  to a  very  small  number of  rating
+targets.
+
+A concern often cited for unbundled criteria is that it is possible in
+principle to specify groupings of security features that might, in toto,
+yield "nonsecure" systems. For example, a system that includes sophisticated
+access control features but omits all audit facilities might represent an
+inappropriate combination of features. If vendors and users of secure systems
+were to become significantly more sophisticated, the need to impose such
+guidance through bundled criteria would become less crucial. However, there
+will always be users and vendors who lack the necessary knowledge and skills
+to understand how trustworthy a system may be. The question is whether it is
+wise to rely on vendors to select "good" combinations of security features
+for systems and to rely on users to be knowledgeable in requesting
+appropriate groupings if unbundled criteria are adopted.
+
+While bundled criteria may protect the  naive vendor, they may also limit the
+sophisticated vendor, because  they do not reward the  development of systems
+with security  functionality or assurance  outside of that prescribed  by the
+ratings. For example, recent work on security models (Clark and Wilson, 1987)
+suggests that many  security practices in the commercial sector  are not well
+matched to  the security  models that  underlie the  Orange Book.  A computer
+system designed expressly to support  the Clark-Wilson model of security, and
+thus  well suited  to  typical commercial  security  requirements, might  not
+qualify under evaluation based on the  Orange Book. A system that did qualify
+for an  Orange Book rating and  had added functions for  integrity to support
+the Clark-Wilson  model would  receive no special  recognition for  the added
+functionality  since that  functionality, notably  relating to  integrity, is
+outside the scope of the Orange Book.3
+
+The  government-funded LOCK  project (see  Appendix B),  for example,  is one
+attempt  to provide  both security  functionality and  assurance beyond  that
+called for by  the highest rating (A1)  of the Orange Book.  But because this
+project's  security characteristics  exceed  those specified  in the  ratings
+scale, LOCK  (like other attempts to  go beyond A1) cannot  be "rewarded" for
+these capabilities  within the rating scheme.  It can be argued  that if LOCK
+were not government  funded it would not have been  developed, since a vendor
+would have no means within the evaluation process of substantiating claims of
+superior  security  and  users  would  have  no  means  of  specifying  these
+capabilities  (e.g., in  requests  for proposals)  relative  to the  criteria
+(Orange Book).
+
+Bundled  criteria make  it  difficult  to modify  the  criteria  to adapt  to
+changing technology or modes of use. Changing computer technology imposes the
+requirement  that security  criteria must  evolve. The  advent of  networking
+represents  a key  example  of this  need.  For example,  as  this report  is
+prepared, none of the computers rated  by the NCSC includes network interface
+software  in the  evaluated  product, despite  the fact  that  many of  these
+systems will  be connected to networks.  This may be indicative,  in part, of
+the  greater complexity  associated with  securing a  computer attached  to a
+network, but  it also illustrates  how criteria can become  disconnected from
+developments in the workplace. For some  of these computers, the inclusion of
+network interface  software will  not only formally  void the  evaluation but
+will also introduce unevaluated,  security-critical software. This experience
+argues  strongly  that  evaluation  criteria  must  be  able  to  accommodate
+technological  evolution  so  that  fielded products  remain  true  to  their
+evaluations.
+
+The discussion and  examples given above demonstrate that  constraints on the
+evolving marketplace can occur unless  evaluation criteria can be extended to
+accommodate  new  paradigms  in  security functionality  or  assurance.  Such
+problems could  arise with unbundled  criteria, but criteria like  the Orange
+Book  set  seem  especially  vulnerable  to  paradigm  shifts  because  their
+hierarchic, bundled nature makes them more difficult to extend.
+
+Based on these  considerations, the committee concludes that in  the future a
+somewhat less bundled  set of security criteria will best  serve the needs of
+the user and vendor communities. It  is essential to provide for evolution of
+the  criteria to  address new  functions  and new  assurance techniques.  The
+committee  also believes  that naive  users are  not well  served by  bundled
+criteria, but rather are misled to believe that complex security problems can
+be solved by merely selecting an  appropriately rated product. If naive users
+or vendors  need protection  from the  possibility of  selecting incompatible
+features  from  the  criteria,  this  can  be  made  available  by  providing
+guidelines, which can suggest collections of features that, while useful, are
+not mandatory, as bundled criteria would be.
+
+@subheading Comparing National Criteria Sets
+
+The  Orange  Book and  its  Trusted  Network  Interpretation, the  Red  Book,
+establish ratings that  span four hierarchical divisions: D, C,  B, and A, in
+ascending order.  The  "D" rating is given to products  with negligible or no
+security;  the  "C,"  "B,"  and "A''  ratings  reflect  specific,  increasing
+provision of security.  Each division  includes one or more classes, numbered
+from  1 (that  is,  stronger  ratings correlate  with  higher numbers),  that
+provide finer-granularity  ratings. Thus  an evaluated  system is  assigned a
+digraph, for example, C2  or A1, that places it in a class  in a division. At
+present, the following classes exist, in ascending order: C1, C2, B1, B2, B3,
+and A1.   A summary of  criteria for each  class, reproduced from  the Orange
+Book's Appendix  C, can  be found in  Appendix A of  this report.   There are
+significant,  security  functionality  distinctions  between  division-C  and
+division-B systems. In particular, the  C division provides for discretionary
+access  control, while  the B  division  adds mandatory  access control.   A1
+systems, the only  class today within the A division,  add assurance, drawing
+on formal design specification and  verification, but no functionality, to B3
+systems. Assurance  requirements increase from  one division to the  next and
+from one class  to the next within  a division. The Orange  Book describes B2
+systems as relatively resistant, and  B3 as highly resistant, to penetration.
+The  robustness  of   these  and  higher  systems  comes   from  their  added
+requirements for functionality and/or assurance,  which in turn drive greater
+attention to security, beginning in the early stages of development. That is,
+more effort must be made to build security in, as opposed to adding it on, to
+achieve a B2 or higher rating.
+
+In  these   U.S.  criteria,  both   the  language  for   expressing  security
+characteristics  and  the basis  for  evaluation  are  thus embodied  in  the
+requirements for each division and  class. This represents a highly "bundled"
+approach to criteria  in that each rating, for example,  B2, is a combination
+of a set of security functions and security assurance attributes.
+
+The   Information  Technology   Security   Evaluation  Criteria   (ITSEC)—the
+harmonized  criteria of  France,  Germany, the  Netherlands,  and the  United
+Kingdom (Federal Republic of Germany, 1990)—represents an effort to establish
+a  comprehensive set  of security  requirements for  widespread international
+use. ITSEC is  generally intended as a superset of  TCSEC, with ITSEC ratings
+mappable onto the  TCSEC evaluation classes (see  below). Historically, ITSEC
+represents  a remarkably  easily attained  evolutionary grafting  together of
+evaluation classes  of the  German (light)  Green Book  (GISA, 1989)  and the
+"claims language" of  the British (dark) Green Books (U.K.  DTI, 1989). ITSEC
+unbundles functional criteria (F1 to F10) and correctness criteria (E0 as the
+degenerate case, and E1 to E6), which are evaluated independently.
+
+The  functional criteria  F1  to F5  are of  generally  increasing merit  and
+correspond roughly to  the functionality of TCSEC evaluation  classes C1, C2,
+B1, B2,  and B3, respectively.  The remaining functionality  criteria address
+data and program integrity (F6),  system availability (F7), data integrity in
+communication (F8),  data confidentiality in communication  (F9), and network
+security, including  confidentiality and  integrity (F10). F6  to F10  may in
+principle be  evaluated orthogonally  to each  other and  to the  chosen base
+level, F1, F2, F3, F4, or F5.
+
+The correctness  criteria are intended  to provide increased assurance.  To a
+first approximation,  the correctness  criteria cumulatively  require testing
+(E1), configuration control  and controlled distribution (E2),  access to the
+detailed design and  source code (E3), rigorous  vulnerability analysis (E4),
+demonstrable correspondence between detailed design and source code (E5), and
+formal models,  formal descriptions, and formal  correspondences between them
+(E6). E2  through E6  correspond roughly  to the  assurance aspects  of TCSEC
+evaluation classes C2, B1, B2, B3, and A1, respectively.
+
+ITSEC's unbundling  has advantages and  disadvantages. On  the whole it  is a
+meritorious  concept, as  long  as  assurance does  not  become  a victim  of
+commercial expediency,  and if the  plethora of rating combinations  does not
+cause confusion.
+
+A  particular  concern  with the  ITSEC  is  that  it  does not  mandate  any
+particular modularity with respect to  system architecture. In particular, it
+does not require  that the security-relevant parts of the  system be isolated
+into a trusted computing  base, or TCB. It is of  course possible to evaluate
+an entire  system according to  ITSEC without reference to  its composability
+(e.g.,  as  an  application on  top  of  a  TCB),  but this  complicates  the
+evaluation   and  fails   to  take   advantage  of   other  related   product
+evaluations. The effectiveness of this approach remains to be seen.
+
+The  initial  ITSEC  draft  was  published  and  circulated  for  comment  in
+1990. Hundreds  of comments were  submitted by individuals  and organizations
+from several countries, including the United States, and a special meeting of
+interested parties  was held in  Brussels in September  1990. In view  of the
+volume and range of comments submitted,  plus the introduction of a different
+proposal by EUROBIT, a European  computer manufacturers' trade association, a
+revised draft is not expected before mid-1991.
+
+The dynamic  situation calls for  vigilance and participation, to  the extent
+possible, by U.S. interests. At  present, the National Institute of Standards
+and Technology (NIST) is coordinating  U.S. inputs, although corporations and
+individuals are  also contributing directly.  It is likely that  the complete
+process   of   establishing   harmonized  criteria,   associated   evaluation
+mechanisms,  and  related standards  will  take  some  time and  will,  after
+establishment, continue to evolve. Because the European initiatives are based
+in part  on a  reaction to the  narrowness of the  TCSEC, and  because NIST's
+resources are severely constrained, the  committee recommends that GSSP and a
+new  organization to  spearhead  GSSP, the  Information Security  Foundation,
+provide a focus  for future U.S. participation in  international criteria and
+evaluation initiatives.
+
+@subheading Reciprocity Among Criteria Sets
+
+A question naturally  arises with regard to comparability  and reciprocity of
+the ratings of different systems. Even  though ratings under one criteria set
+may be mappable to roughly comparable ratings under a different criteria set,
+the mapping  is likely to  be imprecise and  not symmetric; for  example, the
+mappings may  be many-to-one. Even if  there is a reasonable  mapping between
+some ratings in  different criteria, one country may refuse  to recognize the
+results of an evaluation performed by an organization in another country, for
+political,  as well  as  technical,  reasons. The  subjective  nature of  the
+ratings process makes it difficult,  if not impossible, to ensure consistency
+among evaluations performed at different facilities, by different evaluators,
+in  different countries,  especially when  one  adds the  differences in  the
+criteria themselves.  In such  circumstances it  is not  hard to  imagine how
+security evaluation  criteria can become  the basis for erecting  barriers to
+international  trade in  computer  systems,  much as  some  have argued  that
+international standards have  become (Frenkel, 1990). Reciprocity  has been a
+thorny problem  in the  comparatively simpler area  of rating  conformance to
+interoperability standards, where testing  and certification are increasingly
+in demand,  and there  is every  indication it  will be  a major  problem for
+secure systems.
+
+Multinational vendors of computer systems do  not wish to incur the costs and
+delay to market associated with multiple evaluations under different national
+criteria  sets. Equally  important,  they may  not be  willing  to reveal  to
+foreign  evaluators details  of  their system  design  and their  development
+process, which they  may view as highly proprietary. The  major U.S. computer
+system vendors  derive a significant  fraction of their revenue  from foreign
+sales and thus are especially vulnerable to proliferating, foreign evaluation
+criteria.  At the  same time,  the NCSC  has interpreted  its charter  as not
+encompassing evaluation  of systems  submitted by  foreign vendors.  This has
+stimulated the  development of foreign  criteria and thus has  contributed to
+the potential conflicts among criteria on an international scale.
+
+Analyses indicate  that one can  map any of the  Orange Book ratings  onto an
+ITSEC rating. A  reverse mapping (from ITSEC to Orange  Book ratings) is also
+possible, although some  combinations of assurance and  functionality are not
+well  represented,  and  thus  the evaluated  product  may  be  "underrated."
+However,  the ITSEC  claims language  may tend  to complicate  comparisons of
+ITSEC ratings with one another.
+
+Products evaluated under  the Orange Book could be granted  ITSEC ratings and
+ratings under  other criteria that  are relatively unbundled. This  should be
+good  news for  U.S. vendors,  if rating  reciprocity agreements  are enacted
+between the United  States and foreign governments. Of course,  a U.S. vendor
+could not use  reciprocity to achieve the full range  of ratings available to
+vendors who undergo ITSEC evaluation directly.
+
+Even when there are correspondences between ratings under different criteria,
+there is the question of confidence  in the evaluation process as carried out
+in different  countries.4 Discussions  with NCSC and  NSA staff  suggest that
+reciprocity may  be feasible at lower  levels of the Orange  Book, perhaps B1
+and  below, but  not  at  the higher  levels  (committee briefings;  personal
+communications).  In  part this  sort of  limitation reflects  the subjective
+nature of the  evaluation process. It may also indicate  a reluctance to rely
+on "outside" evaluation  for systems that would be used  to separate multiple
+levels of  DOD classified  data. If  other countries were  to take  a similar
+approach for  high assurance  levels under  their criteria,  then reciprocity
+agreements would be of limited value over time (as more systems attain higher
+ratings). Another likely  consequence would be a  divergence between criteria
+and  evaluations for  systems intended  for use  in defense  applications and
+those intended for use in commercial applications.
+
+@heading SYSTEM CERTIFICATION VS. PRODUCT EVALUATION
+
+The discussion above has addressed security evaluation criteria that focus on
+computer  and network  products. These  criteria do  not address  all of  the
+security concerns that  arise when one actually deploys a  system, whether it
+consists of a single computer or is composed of multiple computer and network
+products  from different  vendors.  Procedural and  physical safeguards,  and
+others for personnel and emanations,  enter into overall system security, and
+these  are not  addressed by  product  criteria. Overall  system security  is
+addressed by performing a thorough analysis of the system in question, taking
+into account not only the ratings of products that might be used to construct
+the system, but also the threats directed against the system and the concerns
+addressed  by the  other safeguards  noted  above, and  producing a  security
+architecture that address all of these security concerns.
+
+The simple ratings  scheme embodied in the  Orange Book and the  TNI have led
+many users to think  in terms of product ratings for  entire systems. Thus it
+is not  uncommon to  hear a  user state  that his  system, which  consists of
+numerous computers  linked by various  networks, all from  different vendors,
+needs to be, for  example, B1. This statement arises from  a naive attempt to
+apply  the environment  guidelines developed  for the  Orange Book  to entire
+systems of much greater complexity and  diversity. It leads to discussions of
+whether a network connecting several computers with the same rating is itself
+rated at or below the level  of the connected computers. Such discussions, by
+adopting designations developed  for product evaluation, tend  to obscure the
+complexity of characterizing  the security requirements for  real systems and
+the difficulty of designing system security solutions.
+
+In fact, the  term "evaluation" is often reserved for  products, not deployed
+systems. Instead, at  least in the DOD and  intelligence communities, systems
+are certified  for use in a  particular environment with data  of a specified
+sensitivity.5  Unfortunately,  the certification  process  tends  to be  more
+subjective  and  less  technically   rigorous  than  the  product  evaluation
+process.  Certification of  systems historically  preceded Orange  Book-style
+product evaluation,  and certification  criteria are typically  less uniform,
+that is, varying from agency to agency.
+
+Nonetheless, certification does attempt to take  into account the full set of
+security disciplines  noted above and  thus is more  an attempt at  a systems
+approach to security than it is product evaluation.
+
+Certified systems are not rated  with concise designations, and standards for
+certification are  less uniform  than those for  product evaluation,  so that
+users cannot use the results of a certification applied to an existing system
+to simply  specify security requirements for  a new system. Unlike  that from
+product evaluations, the experience gained  from certifying systems is not so
+easily  codified and  transferred for  use  in certifying  other systems.  To
+approach the  level of rigor  and uniformity  comparable to that  involved in
+product  evaluation,  a system  certifier  would  probably  have to  be  more
+extensively trained than  his counterpart who evaluates  products. After all,
+certifiers must  be competent  in more  security disciplines  and be  able to
+understand  the  security implications  of  combining  various evaluated  and
+unevaluated components to construct a system.
+
+A user attempting  to characterize the security requirements for  a system he
+is to acquire will find applying  system certification methodology a priori a
+much more complex process than specifying a concise product rating based on a
+reading  of  the  TCSEC  environment   guidelines  (Yellow  Book;  U.S.  DOD,
+1985b).  Formulating the  security architecture  for a  system and  selecting
+products to  realize that architecture  are intrinsically complex  tasks that
+require expertise most  users do not possess. Rather than  attempting to cast
+system  security requirements  in  the  very concise  language  of a  product
+ratings scheme  such as  the Orange  Book, users  must accept  the complexity
+associated with  system security  and accept  that developing  and specifying
+such  requirements are  nontrivial  tasks best  performed  by highly  trained
+security specialists.6
+
+In large  organizations the task  of system  certification may be  handled by
+internal  staff.  Smaller organizations  will  probably  need to  enlist  the
+services of external specialists to aid in the certification of systems, much
+as structural engineers  are called in as consultants. In  either case system
+certifiers will need  to be better trained to deal  with increasingly complex
+systems with increased rigor. A combination of formal training and real-world
+experience  are  appropriate  prerequisites  for  certifiers,  and  licensing
+(including  formal   examination)  of  consulting  certifiers   may  also  be
+appropriate.
+
+Increasingly, computers  are becoming  connected via  networks and  are being
+organized into distributed systems. In such environments a much more thorough
+system security analysis is required,  and the product rating associated with
+each  of  the individual  computers  is  in no  way  a  sufficient basis  for
+evaluating the security of the system as  a whole. This suggests that it will
+become increasingly  important to develop methodologies  for ascertaining the
+security  of   networked  systems,   not  just  evaluations   for  individual
+computers.  Product  evaluations  are  not applicable  to  whole  systems  in
+general, and as  "open systems" that can be  interconnected relatively easily
+become more  the rule, the need  for system security evaluation,  as distinct
+from product evaluation, will become even more critical.
+
+Many of the complexities of system security become apparent in the context of
+networks, and  the TNI (which  is undergoing revision)  actually incorporates
+several  distinct   criteria  in   its  attempt   to  address   these  varied
+concerns.  Part  I  of  the  TNI provides  product  evaluation  criteria  for
+networks, but since networks are  seldom homogeneous products this portion of
+the  TNI  seems  to  have  relatively little  direct  applicability  to  real
+networks. Part II and Appendix A of  the TNI espouse an unbundled approach to
+evaluation of network components, something that seems especially appropriate
+for such devices  and that is similar  to the ITSEC F9  and F10 functionality
+classes. However, many of the ratings specified  in Part II and Appendix A of
+the  TNI are  fairly crude;  for example,  for some  features only  "none" or
+"present" ratings may be granted. More precise ratings, accompanied by better
+characterizations  of requirements  for such  ratings, must  be provided  for
+these portions  of the  TNI to become  really useful. Appendix  C of  the TNI
+attempts to provide generic rules to  guide users through the complex process
+of connecting rated products together to form trusted systems, but it has not
+proven  to be  very useful.  This  is clearly  a topic  suitable for  further
+research (see Chapter 8).
+
+@heading RECOMMENDATIONS FOR PRODUCT EVALUATION AND SYSTEM CERTIFICATION
+CRITERIA
+
+The U.S.  computer industry has  made a significant investment  in developing
+operating  systems that  comply with  the  Orange Book.  This reality  argues
+against any recommendation  that would undercut that  investment or undermine
+industry confidence  in the  stability of  security evaluation  criteria. Yet
+there are compelling arguments in favor of establishing less-bundled criteria
+to address  some of the shortcomings  cited above. This situation  suggests a
+compromise approach in  which elements from the Orange Book  are retained but
+additional criteria, extensions  of the TCSEC, are developed  to address some
+of these arguments. This tack is consistent with the recommendations for GSSP
+made  in Chapter  1, which  would accommodate  security facilities  generally
+regarded  as useful  but  outside  the scope  of  the  current criteria,  for
+example, those  supporting the  model for  Clark-Wilson integrity  (Clark and
+Wilson, 1987).
+
+The  importance of  maintaining the  momentum  generated by  the Orange  Book
+process  and  planning  for  some  future  reciprocity  or  harmonization  of
+international criteria sets makes modernization of the Orange Book necessary,
+although the committee anticipates a convergence between this process and the
+process  of developing  GSSP.  In both  instances, the  intent  is to  reward
+vendors who wish to provide  additional security functionality and/or greater
+security  assurance  than  is  currently  accommodated  by  the  Orange  Book
+criteria. The  TNI should be restructured  to be more analogous  to the ITSEC
+(i.e., with less  emphasis on Parts I  and II and more on  a refined Appendix
+A).  The TNI  is new  enough so  as  not to  have acquired  a large  industry
+investment,  and it  is now  undergoing revision  anyway. Thus  it should  be
+politically feasible to modify the TNI at this stage.
+
+The  ITSEC effort  represents  a serious  attempt to  transcend  some of  the
+limitations  in  the   TCSEC,  including  the  criteria   for  integrity  and
+availability. However,  it must  be recognized that  neither TCSEC  nor ITSEC
+provides  the  ultimate answer,  and  thus  ongoing  efforts are  vital.  For
+example, a  weakness of  ITSEC is  that its  extended functional  criteria F6
+through F10 are independently assessable monolithic requirements. It might be
+more appropriate if integrity and availability criteria were graded similarly
+to criteria Fl through F5 for  confidentiality, with their own hierarchies of
+ratings. (The draft Canadian criteria work in that direction.)
+
+There is also a need to address  broader system security concerns in a manner
+that recognizes the heterogeneity of integrated or conglomerate systems. This
+is a matter more akin to certification than to product evaluation.
+
+To  better address  requirements  for  overall system  security,  it will  be
+necessary to institute more objective, uniform, rigorous standards for system
+certification. The committee recommends that GSSP include relevant guidelines
+to  illuminate such  standards. To  begin, a  guide for  system certification
+should be  prepared, to  provide a  more uniform  basis for  certification. A
+committee  should be  established  to examine  existing system  certification
+guidelines  and   related  documentation—for  example,   password  management
+standards—from  government and  industry  as input  to  these guidelines.  An
+attempt should be made to formalize  the process of certifying a conglomerate
+system composed of  evaluated systems, recognizing that this  problem is very
+complex  and may  require a  high degree  of training  and experience  in the
+certifier. Development and evaluation of heterogeneous systems remain crucial
+research issues.
+
+For systems where classified information must be protected, a further kind of
+criteria  development  is  implied,  notably  development  of  an  additional
+assurance class within the A division, for example, A2 (this is primarily for
+government, not commercial, users),7 as  well as functionality extensions for
+all divisions of the Orange Book.
+
+The committee's conclusions and  specific recommendations, which are restated
+in Chapter 1 under recommendation 1, are as follows:
+
+@enumerate
+@item
+A  new  generation   of  evaluation  criteria  is  required   and  should  be
+established,  to deal  with an  expanded set  of functional  requirements for
+security and to respond to the evolution of computer technology, for example,
+networking.  These criteria  can incorporate  the security  functions of  the
+existing TCSEC (at the C2 or B1 level) and thus preserve the present industry
+investment in  Orange Book-rated systems.  The committee's proposed  GSSP are
+intended to meet this need.
+@item
+The new generation of criteria should  be somewhat unbundled, compared to the
+current TCSEC,  both to permit  the addition of  new functions and  to permit
+some  flexibility in  the assurance  methodology used.  Guidelines should  be
+prepared  to  prevent  naive  users  from  specifying  incompatible  sets  of
+requirements.  The ITSEC  represents a  reasonable example  of the  desirable
+degree of unbundled specification.
+@item
+Systems designed  to conform to  GSSP should undergo explicit  evaluation for
+conformance to the GSSP criteria. Design evaluation should be performed by an
+independent team  of evaluators.  Implementation evaluation should  include a
+combination  of  explicit  system  audit,  field  experience,  and  organized
+reporting of security faults. Such a process, which should be less costly and
+less  onerous  than   the  current  NCSC  process,  is  more   likely  to  be
+cost-effective to the vendor and user,  and is more likely to gain acceptance
+in the market.
+@item
+Effort should  be expended to develop  and improve the organized  methods and
+criteria  for dealing  with complete  systems, as  opposed to  products. This
+applies  particularly  to distributed  systems,  in  which various  different
+products are connected by a network.
+@end enumerate
+
+@heading Notes
+
+@enumerate
+@item
+In the current  environment, in which evaluations have been  conducted by the
+NCSC, commercial  system developers may  face a greater challenge  than those
+with defense contracting experience, who  may have both cleared personnel and
+a  working understanding  of the  documentation requirements.  This practical
+problem  underscores the  need for  a  more effective  interface between  the
+commercial and the national security or classified worlds.
+@item
+Based on  information obtained in  a briefing  from NCSC officials,  the NCSC
+evaluation process consists of five  phases, including: (1) Pre-review Phase,
+(2)  Vendor Assistance  Phase (VAP),  (3) Design  Analysis Phase,  (4) Formal
+Evaluation Phase, and (5) Rating Maintenance Phase (RAMP).
+
+In the Pre-review Phase vendors present the NCSC with a proposal defining the
+goals they expect to achieve and the basic technical approach being used. The
+pre-review proposal is used to determine  the amount of NCSC resources needed
+to perform any subsequent evaluation.  The Vendor Assistance Phase, which can
+begin at any  stage of product development, consists  primarily of monitoring
+and providing comments. During this phase,  the NCSC makes a conscious effort
+not to "advise"  the vendors (for legal reasons and  because it is interested
+in  evolution, not  research and  development). The  Vendor Assistance  Phase
+usually ends  six to eight  months before a  product is released.  The Design
+Analysis Phase takes  an in-depth look at the design  and implementation of a
+product using analytic tools. During  this phase the Initial Product Analysis
+Report  (IPAR) is  produced, and  the product  is usually  released for  Beta
+testing.  The   Formal  Evaluation   Phase  includes  both   performance  and
+penetration testing of the actual  product being produced. Products that pass
+these tests are added to the Evaluated Products List (EPL) at the appropriate
+level.  Usually vendors  begin  shipping their  product  to normal  customers
+during this  phase. The  Rating Maintenance Phase  (RAMP), which  takes place
+after products are shipped and  pertains to enhancements (e.g., movement from
+one version of a  product to another), is intended for C2  and B1 systems, to
+enable  vendors  to  improve  their product  without  undergoing  a  complete
+recertification.
+@item
+The  NCSC has  argued that  it is  premature to  adopt criteria  that address
+security features  that support Clark-Wilson integrity  because formal models
+for such  security policies do  not yet exist. In  this way they  justify the
+present bundled structure of the TCSEC  (committee briefing by NSA). The NCSC
+continues to view integrity and assured  service as research topics, citing a
+lack of  formal policy  models for  these security  services. However,  it is
+worth noting  that the Orange Book  does not require a  system to demonstrate
+correspondence to  a formal  security policy  model until  class B2,  and the
+preponderance of rated systems in use in the commercial sector are below this
+level,  for  example,  at  the  C2 level.  Thus  the  NCSC  argument  against
+unbundling the  TCSEC to include  integrity and availability  requirements in
+the criteria, at least at these lower levels of assurance, does not appear to
+be consistent.
+@item
+In  the  future  software  tools  that  capture  key  development  steps  may
+facilitate evaluation and cross-checks on evaluations by others.
+@item
+In the DOD environment the term  "accreditation" refers to formal approval to
+use a system  in a specified environment as granted  by a designated approval
+authority.  The term  "certification" refers  to the  technical process  that
+underlies the formal accreditation.
+@item
+The claims  language of  the ITSEC  may be more  amenable to  system security
+specification. However, product evaluation and system certification are still
+different  processes  and  should  not  be  confused,  even  if  the  ratings
+terminology can be shared between the two.
+@item
+Proposals for an A2 class have been made before with no results, but LOCK and
+other projects  suggest that  it may now  be time to  extend the  criteria to
+provide a higher assurance class. This class could apply formal specification
+and  verification technology  to  a greater  degree,  require more  stringent
+control on the  development process (compare to the ITSEC  E6 and E7), and/or
+call  for  stronger security  mechanisms  (e.g.,  the  LOCK SIDEARM  and  BED
+technology, described  in Appendix  B of  this report).  The choice  of which
+additional assurance features might be included in A2 requires further study.
+@end enumerate
 
 @node Knowledge checks Evolution
 @section Knowledge Checks for Evolution of Internet Security
 
-@node Basic Knowledge Units
-@chapter Basic Knowledge Units
+@node Module 2 - Basic Knowledge Units
+@chapter Module 2 - Basic Knowledge Units
 
-@node Risk Data Tools
-@chapter Rist, Data, and Tools
+@node Module 3 - Risk Data Tools
+@chapter Module 3 --- Rist, Data, and Tools
 
-@node Threat Intelligence
-@chapter Threat Intelligence and the Hunt
+@node Module 4 - Threat Intelligence
+@chapter Module 4 --- Threat Intelligence and the Hunt
 
 @node Summary
 @unnumbered Course Summary
@@ -384,6 +1340,7 @@ Chapter One Section one...
 @<Makefile Tangle@>
 @<Makefile Weave@>
 @<Makefile Info@>
+@<Makefile Pdf@>
 @<Makefile Clean@>
 @<Makefile Dist Clean@>
 @<Makefile Directory Creation@>
@@ -415,10 +1372,11 @@ HTML_DIR := ${PREFIX}/html
 @appendixsubsubsec Makefile Filename Definitions
 
 @<Makefile Filename Definitions@>=
-FILENAME := twjrtemplate
+FILENAME := CYB003x
 TWJR_FILENAME := ${FILENAME}.twjr
 TEXI_FILENAME := ${FILENAME}.texi
 INFO_FILENAME := ${FILENAME}.info
+PDF_FILENAME := ${FILENAME}.pdf
 
 @
 
@@ -465,6 +1423,19 @@ ${INFO_FILENAME} : ${TEXI_FILENAME}
 
 @
 
+@node Makefile Pdf
+@appendixsubsubsec Makefile Pdf
+
+@<Makefile Pdf@>=
+.Phony : pdf
+pdf : ${PDF_FILENAME}
+
+${PDF_FILENAME}: ${TEXI_FILENAME}
+	pdftexi2dvi ${TEXI_FILENAME}
+	open ${PDF_FILENAME}
+
+@
+
 @node Makefile Clean Targets
 @appendixsubsec Makefile Clean Targets
 
@@ -484,8 +1455,10 @@ clean :
 @<Makefile Dist Clean@>=
 .Phony : dist-clean
 dist-clean : clean
-	rm -f *.texi
-	rm -f *.info
+	rm -f ${FILENAME}.texi
+	rm -f ${FILENAME}.info
+	rm -f ${FILENAME}.??
+	rm -f ${FILENAME}.???
 
 @
 
