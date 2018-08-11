@@ -1,0 +1,705 @@
+\input texinfo @c -*- texinfo -*-
+
+@c ==================================================
+@c NAME:    Algorithmic Design and Techniques
+@c VERSION: 2018-08-10 VERSION 0.0.1
+@c DESC:    https://www.edx.org/course/algorithmic-design-techniques-uc-san-diegox-algs200x
+@c BY:      LOLH
+@c NOTES:   
+@c ==================================================
+
+@c %**start of header
+@c edit
+@setfilename algdesigntech.info
+@c edit
+@settitle Algorithmic Design & Techniques
+@c %**end of header
+
+@c ====================
+@c texiwebjr specials
+@c ====================
+@c Changes how xref titles are quoted.
+@dquotexrefs
+
+@c Lets braces in index entries work.
+@allowindexbraces
+
+@ifclear FORPRINT
+@pdflinkcolor
+@urllinkcolor
+@hideurls
+@end ifclear
+
+@c some special symbols
+@ifnottex
+@macro ii{text}
+@i{\text\}
+@end macro
+@end ifnottex
+
+@c merge the function and variable indexes into the concept index
+@c do so without the code font, and in the index entries do the
+@c font management ourselves.  Also merge in the chunk definition
+@c and reference entries, which jrweave creates for us.
+@ifnothtml
+@synindex fn cp
+@synindex vr cp
+@synindex cd cp
+@synindex cr cp
+@end ifnothtml
+
+@c ====================
+@c DOCUMENT CONSTANTS
+@c ====================
+@set UPDATE-MONTH AUGUST 2018
+@set EDITION 0.1
+@set AUTHOR LOLH
+@set TITLE Algorithmic Design and Techniques
+@set SHORTTITLE Algorithmic Design
+@set SUBTITLE edX --- UC San Diego X 
+@set COPYRIGHT_YEAR 2018
+@set COPYRIGHT_HOLDER LOLH
+
+@iftex
+@set DOCUMENT book
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@set DRAFT Draft
+@end iftex
+@ifhtml
+@set DOCUMENT Web page
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end ifhtml
+@ifinfo
+@set DOCUMENT Info file
+@set CHAPTER major node
+@set APPENDIX major node
+@set SECTION minor node
+@set SUBSECTION node
+@end ifinfo
+@ifdocbook
+@set DOCUMENT book
+@set CHAPTER chapter
+@set APPENDIX appendix
+@set SECTION section
+@set SUBSECTION subsection
+@end ifdocbook
+
+@c ====================
+@c FINALOUT
+@c ====================
+@c If "finalout" is commented out, the printed output will show
+@c black boxes that mark lines that are too long.  Thus, it is
+@c unwise to comment it out when running a master in case there are
+@c overfulls which are deemed okay.
+
+@iftex
+@c |@finalout|
+@end iftex
+
+@c ====================
+@c SUMMARY & COPYRIGHT INFORMATION
+@c ====================
+@copying
+@c insert a short summary describing and identifying this document in a
+@c sentence or two, and add the copyright notice and copying permisions
+
+This document  is @value{TITLE}
+@sp 2
+This document  outlines the edX UC  Diego X course on  Algorithmic Design and
+Techniques
+
+Copyright @copyright{} @value{COPYRIGHT_YEAR} LOLH @*
+by @value{COPYRIGHT_HOLDER} @*
+All Rights Reserved
+
+@quotation
+Permission is granted to read, study, and enjoy this text.
+@end quotation
+
+@sp 2
+This is Edition @value{EDITION} of @cite{@value{TITLE}}.
+
+@c use @insertcopying later to 'emit' this copying information in a TeX
+@c or plain text document; add to the Top node for use in Info or HTML file
+@end copying
+
+@c ====================
+@c TITLEPAGE, COPYRIGHT PAGE, TOC PAGE, HEADINGS
+@c ====================
+@titlepage
+
+@title @value{TITLE}
+@subtitle @value{SUBTITLE}
+@c @subtitle Additional Subtitle
+@author @value{AUTHOR}
+
+@c place the copyright information on the backside of the titlepage
+@c (printed manual only)
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+
+Published by LOLH.
+
+@end titlepage
+@c page numbering and headings start after end of titlepage
+
+@iftex
+@headings off
+@evenheading @thispage @| @value{DRAFT} @| @strong{@value{SHORTTITLE}}
+@oddheading  @strong{@thischapter} @| @value{DRAFT} @| @thispage
+@end iftex
+
+@c TOC in the printed manual
+@c consider placing TOC after the main menu
+@c consider including summarycontents here or after main menu
+@c @summarycontents
+@contents
+
+@c ====================
+@c TOP NODE, MASTER MENU
+@c ====================
+@ifnottex
+@ifnotdocbook
+@ifnotxml
+@node Top
+@top Algorithmic Design and Techniques
+
+@c @insertcopying
+@end ifnotxml
+@end ifnotdocbook
+@end ifnottex
+
+@c ====================
+@c START OF BODY
+@c ====================
+
+@c Preface and Foreward come right after Top node in 'unnumbered' sections
+@c consider commenting out Foreward and Preface
+@menu
+
+@end menu
+@c ====================
+@c MAIN BODY NODES
+@c ====================
+
+@node Introduction
+@unnumbered Introduction to Algorithmic Design and Techniques
+
+@chapheading About This Course
+
+In this course, part of the @cite{Algorithms and Data Structures MicroMasters
+program},  you  will  learn  basic   algorithmic  techniques  and  ideas  for
+computational problems, which arise in practical applications such as sorting
+and searching, divide and conquer, greedy algorithms and dynamic programming.
+
+This course will cover theories, including:
+
+@itemize
+@item
+how to sort data and how it helps for searching;
+@item
+how to break a large problem into pieces and solve them recursively;
+@item
+when it makes sense to proceed greedily;
+@item
+how dynamic programming is used in genomic studies.
+@end itemize
+
+You will  practice solving computational problems,  designing new algorithms,
+and  implementing solutions  efficiently (so  that they  run in  less than  a
+second).
+
+@heading What you'll learn
+
+@itemize
+@item
+Essential  algorithmic techniques  - greedy  algorithms, divide  and conquer,
+binary search, sorting, dynamic programming
+@item
+Best practices of implementing algorithms efficiently
+@item
+Ways of testing and debugging programs
+@end itemize
+
+@node Syllabus
+@unnumberedsec Syllabus
+
+@heading Module 1: Welcome
+
+Here we will provide an overview  of where algorithms and data structures are
+used  (hint:  everywhere) and  walk  you  through  a few  sample  programming
+challenges. The programming challenges represent  an important (and often the
+most difficult!)  part of this specialization  because the only way  to fully
+understand an  algorithm is  to implement it.  Writing correct  and efficient
+programs  is hard;  please  don’t be  surprised  if they  don’t  work as  you
+planned—our first  programs did  not work  either! We will  help you  on your
+journey through  the specialization  by showing how  to implement  your first
+programming challenges. We  will also introduce testing  techniques that will
+help increase your  chances of passing assignments on your  first attempt. In
+case your program does not work as intended, we will show how to fix it, even
+if you don’t yet know which test your implementation is failing on.
+
+@heading Module 2: Introduction
+
+In this module you will learn that programs based on efficient algorithms can
+solve the same problem billions of  times faster than programs based on naïve
+algorithms. You will learn how to estimate  the running time and memory of an
+algorithm without even  implementing it. Armed with this  knowledge, you will
+be able  to compare various algorithms,  select the most efficient  ones, and
+finally implement them as our programming challenges!
+
+@heading Module 3: Greedy Algorithms
+
+In this  module you will  learn about seemingly  naïve yet powerful  class of
+algorithms called greedy algorithms. After you will learn the key idea behind
+the greedy algorithms, you may feel that they represent the algorithmic Swiss
+army knife that can be applied  to solve nearly all programming challenges in
+this course. But  be warned: with a  few exceptions that we  will cover, this
+intuitive idea rarely works in practice!  For this reason, it is important to
+prove  that a  greedy algorithm  always produces  an optimal  solution before
+using this algorithm. In the end of  this module, we will test your intuition
+and taste for greedy algorithms by offering several programming challenges.
+
+@heading Module 4: Divide-and-Conquer
+
+In this module  you will learn about a powerful  algorithmic technique called
+Divide and Conquer. Based on this technique,  you will see how to search huge
+databases millions of  times faster than using naïve linear  search. You will
+even learn that the standard way to multiply numbers (that you learned in the
+grade school)  is far  from the  being the  fastest! We  will then  apply the
+divide-and-conquer technique  to design two efficient  algorithms (merge sort
+and  quick  sort)  for  sorting  huge   lists,  a  problem  that  finds  many
+applications in practice. Finally, we will show that these two algorithms are
+optimal, that is, no algorithm can sort faster!
+
+@heading Modules 5 and 6: Dynamic Programming
+
+In  this  final module  of  the  course you  will  learn  about the  powerful
+algorithmic technique  for solving many optimization  problems called Dynamic
+Programming. It turned  out that dynamic programming can  solve many problems
+that  evade all  attempts to  solve them  using greedy  or divide-and-conquer
+strategy.  There  are  countless   applications  of  dynamic  programming  in
+practice:  from maximizing  the advertisement  revenue  of a  TV station,  to
+search  for  similar Internet  pages,  to  gene  finding (the  problem  where
+biologists need to find the minimum number of mutations to transform one gene
+into another). You  will learn how the same idea  helps to automatically make
+spelling corrections and to show the  differences between two versions of the
+same text.
+
+@node Instructors
+@section Meet the Instructors
+
+@itemize
+@item
+@strong{Daniel Kane}, Assistant Professor, Computer Science and Engineering &
+Dept. of Mathematics UC San Diego.
+
+Daniel is an assistant professor at UCSD with a joint appointment between the
+Department  of  Computer  Science  and  Engineering  and  the  Department  of
+Mathematics. He holds B.S. from MIT and Ph.D. from Harvard.
+
+Areas of Expertise
+@itemize @minus
+@item
+Theoretical computer science
+@item
+Combinatorics
+@item
+Number theory
+@end itemize
+
+@item
+@strong{Alexander S. Kulikov}, Visiting Professor UC San Diego
+
+Alexander  is  a  research  fellow   at  Steklov  Mathematical  Institute  at
+St. Petersburg, Russia and a  visiting professor at University of California,
+San  Diego. He  have been  teaching algorithms  classes for  more than  eight
+years.
+
+Areas of Expertise
+@itemize @minus
+@item
+Algorithms for NP-hard problems
+@item
+Circuit complexity
+@end itemize
+
+@item
+@strong{Michael Levin}, Chief Data Scientist, Yandex.Market
+
+Michael  serves as  chief  data  scientist at  Yandex.Market  (Yandex is  the
+leading Internet company in Russia,  and Yandex.Market is the leading service
+for  price  comparison  online  shopping  in Russia).  He  has  a  degree  in
+mathematics from  Moscow State University.  During his studies Michael  was a
+silver and  bronze medalist of  ACM ICPC World Finals  as a member  of Moscow
+State University team.
+
+Areas of Expertise
+@itemize @minus
+@item
+Algorithms
+@item
+Machine Learning & Data Science
+@item
+Competitive Programming
+@end itemize
+
+@item
+@strong{Pavel Pevzner}, Ronald R. Taylor Professor of Computer Science, The University
+of California, San Diego
+
+Pavel  Pevzner is  Ronald  R. Taylor  Professor of  Computer  Science at  the
+University of California,  San Diego. He holds a Ph.D.  from Moscow Institute
+of Physics  and Technology, Russia. He  is a Howard Hughes  Medical Institute
+Professor  (2006-present),  an  Association for  Computing  Machinery  Fellow
+(2010),  and  an  International  Society  for  Computational  Biology  Fellow
+(2012).  In  addition  to   Bioinformatics  Algorithms:  An  Active  Learning
+Approach, he has  authored the textbooks Computational  Molecular Biology: An
+Algorithmic Approach (2000) and  An Introduction to Bioinformatics Algorithms
+(2004) (jointly with Neil Jones).
+
+Areas of Expertise
+@itemize @minus
+@item
+Bioinformatics algorithms
+@item
+Genome rearrangements
+@item
+DNA sequencing
+@item
+Computational proteomics
+@end itemize
+
+@item
+@strong{Neil Rhodes}, Lecturer, UC San Diego
+
+Neil is Lecturer at University of California San Diego (UCSD), formerly Staff
+Software Engineer at Google.
+
+Areas of Expertise
+@itemize @minus
+@item
+Algorithms
+@item
+Software Engineering
+@end itemize
+
+@end itemize
+
+@node Challenges
+@chapter Programming Challenges
+
+@node Welcome
+@section Welcome
+@cindex Welcome
+
+@url{https://youtu.be/FWhp-OvZVGY,
+Video by David Kane}
+
+@node Programming Challenges
+@section Programming Challenges
+@cindex Programming Challenges
+
+Welcome to  the first week of  the class! Here  we will walk you  through two
+sample  programming  challenges.  The  programming  challenges  represent  an
+important (and often the most difficult!) part of this class because the only
+way to fully understand an algorithm  is to implement it. Writing correct and
+efficient programs is  hard; please don’t be surprised if  they don’t work as
+you planned—our first programs did not work  either! We will help you on your
+journey through the class by showing  how to implement your first programming
+challenges. We will also introduce testing techniques that will help increase
+your  chances of  passing assignments  on your  first attempt.  In case  your
+program does not  work as intended, we will  show how to fix it,  even if you
+don’t yet know which test your implementation is failing on.
+
+The detailed  instructions for solving and  submitting programming challenges
+are given  in the first chapter  of the class textbook  available through the
+Statements tab on the  course page. You may read it via  your browser as well
+as download it as a pdf.
+
+@url{https://courses.edx.org/courses/course-v1:UCSanDiegoX+ALGS200x+2T2017/pdfbook/0/,
+Link to Class Textbook}
+
+@node Challenge 1-1 Sum of Two Digits
+@section Programming Challenge 1-1: Sum of Two Digits
+@cindex Programming Challenge 1-1
+@cindex Sum of Two Digits, Programming Challenge 1-1
+
+@node Challenge 1-2 Maximum Pairwise Product
+@section Programming Challenge 1-2: Maximum Pairwise Product
+@cindex Programming Challenge 1-2
+@cindex Maximum Pairwise Produce, Programming Challenge 1-2
+
+@node Assignment 1-1
+@section Assignment 1-1
+@cindex Assignment 1-1
+
+@node Warmup
+@chapter Algorithmic Warmup
+@cindex Warmup
+
+@node Greedy
+@chapter Greedy
+@cindex Greedy Algorithms
+
+@node Divide and Conquer
+@chapter Divide-and-Conquer
+@cindex Divide-and-Conquer
+
+@node Dynamic 1
+@chapter Dynamic Programming 1
+@cindex Dynamic Programming 1
+
+@node Dynamic 2
+@chapter Dynamic Programming 2
+@cindex Dynamic Programming 2
+
+@node Exam
+@chapter Final Exam
+@cindex Exam
+
+@c ====================
+@c APPENDICES
+@c ====================
+
+@node Appendix One
+@appendix Appendix One
+
+@node Meta Appendix
+@appendix Meta (Makefile) Appendix
+
+@node Makefile Definitions
+@appendixsec Makefile Initial Definitions
+
+@(Makefile@)=
+@<Makefile Constants@>
+@<Makefile Default Targets@>
+@<Makefile Tangle@>
+@<Makefile Weave@>
+@<Makefile Info@>
+@<Makefile Pdf@>
+@<Makefile Clean@>
+@<Makefile Dist Clean@>
+@<Makefile Directory Creation@>
+@<Makefile Move Hook@>
+@<Makefile Move JS To Source@>
+@<Makefile Move HTML@>
+@
+@node Makefile Constants
+@appendixsubsec Makefile Constant Definitions
+
+@<Makefile Constants@>=
+@<Makefile Directory Definitions@>
+@<Makefile Filename Definitions@>
+@
+
+@node Directory Definitions
+@appendixsubsubsec Makefile Directory Definitions
+
+@<Makefile Directory Definitions@>=
+PREFIX := .
+SOURCE_DIR := ${PREFIX}/src
+PUBLIC_DIR := ${PREFIX}/public
+HTML_DIR := ${PREFIX}/html
+
+@
+
+@node Filename Definitions
+@appendixsubsubsec Makefile Filename Definitions
+
+@<Makefile Filename Definitions@>=
+FILENAME := Algorithmic_Design_and_Techniques
+TWJR_FILENAME := ${FILENAME}.twjr
+TEXI_FILENAME := ${FILENAME}.texi
+INFO_FILENAME := ${FILENAME}.info
+PDF_FILENAME  := ${FILENAME}.pdf
+
+@
+
+@node Makefile Default Targets
+@appendixsubsec Makefile Default Targets
+
+@<Makefile Default Targets@>=
+.Phony : all
+all : tangle weave
+
+@
+
+@node Makefile Tangle
+@appendixsubsubsec Makefile Tangle
+
+@<Makefile Tangle@>=
+.Phony : tangle
+tangle :
+	jrtangle ${TWJR_FILENAME}
+
+@
+
+@node Makefile Weave
+@appendixsubsubsec Meta Weave
+
+@<Makefile Weave@>=
+.Phony : weave
+weave : ${TEXI_FILENAME}
+
+${TEXI_FILENAME} : ${TWJR_FILENAME}
+	jrweave ${TWJR_FILENAME} > ${TEXI_FILENAME}
+
+@
+
+@node Makefile Info
+@appendixsubsubsec Makefile Info
+
+@<Makefile Info@>=
+.Phony : info
+info : ${INFO_FILENAME}
+
+${INFO_FILENAME} : ${TEXI_FILENAME}
+	makeinfo ${TEXI_FILENAME}
+
+@
+
+@node Makefile Pdf
+@appendixsubsubsec Makefile Pdf
+
+@<Makefile Pdf@>=
+.Phony : pdf
+pdf : ${PDF_FILENAME}
+
+${PDF_FILENAME} : ${TEXI_FILENAME}
+	pdftexi2dvi ${TEXI_FILENAME}
+	open ${PDF_FILENAME}
+
+@
+
+@node Makefile Clean Targets
+@appendixsubsec Makefile Clean Targets
+
+@node Makefile Clean
+@appendixsubsubsec Makefile Clean Definition
+
+@<Makefile Clean@>=
+.Phony : clean
+clean :
+	rm -f *~
+
+@
+
+@node Makefile Dist Clean
+@appendixsubsubsec Meta Dist Clean Definition
+
+@<Makefile Dist Clean@>=
+.Phony : dist-clean
+dist-clean : clean
+	rm -f ${FILENAME}.texi
+	rm -f *.info
+	rm -f ${FILENAME}.{??,???}
+@
+
+@node Makefile Directory Creation
+@appendixsubsec Makefile Directory Creation Targets
+
+@<Makefile Directory Creation@>=
+.Phony : ${SOURCE_DIR}
+${SOURCE_DIR} :
+	mkdir -p ${SOURCE_DIR}
+
+.Phony : ${PUBLIC_DIR}
+${PUBLIC_DIR} :
+	mkdir -p ${PUBLIC_DIR}
+
+.Phony : ${HTML_DIR}
+${HTML_DIR} :
+	mkdir -p ${HTML_DIR}
+
+@
+
+@node Makefile Move Targets
+@appendixsubsec Makefile Move Targets
+
+@node Makefile Move Hook
+@appendixsubsubsec Makefile Move Hook
+
+Use this hook for moving files to a different directory
+than Source; it will execute just prior to the next
+code block moving all .js files to Source.
+
+@<Makefile Move Hook@>=
+@
+
+@node Makefile Move JS
+@appendixsubsubsec Makefile Move JS To Source
+
+@<Makefile Move JS To Source@>=
+.Phony : move-js-to-source
+move-js-to-source : | ${SOURCE_DIR}
+	find ${PREFIX} -depth=1 -name \*.js -exec mv {} ${SOURCE_DIR} \;
+
+@
+
+@node Makefile Move HTML
+@appendixsubsubsec Makefile Move HTML
+
+@<Makefile Move HTML@>=
+.Phony : move-html
+move-html : | ${HTML_DIR}
+	find ${PREFIX} -depth=1 -name \*.html -exec mv {} ${HTML_DIR}\;
+
+@
+
+@node Code Chunk Summaries
+@appendix Code Chunk Summaries
+
+This @value{APPENDIX} presents alphabetical lists of
+all the file definitions, the code chunk definitions,
+and the code chunk references.
+
+@node File Definitions
+@appendixsec Source File Definitions
+
+@print_file_defs
+
+@node Code Chunk Definitions
+@appendixsec Code Chunk Definitions
+
+@print_code_defs
+
+@node Code Chunk References
+@appendixsec Code Chunk References
+
+@print_code_refs
+
+@c ====================
+@c BIBLIOGRAPHY; INDEX; END
+@c ====================
+
+@node Bibliography
+@unnumbered Bibliography
+
+@node Concept Index
+@unnumbered Index
+
+@node Index
+@unnumbered Index
+
+@printindex cp
+
+@bye
+
+@c ====================
+@c TODOs
+@c ====================
+
+1. Create a script to fill in named variables
+1.1 twjr
+1.1.1 init [--dir <directory>]
+1.1.2 config
+1.1.3 weave [--info --pdf --html --xml --docbook]
+1.1.4 tangle [--file <filename>]
