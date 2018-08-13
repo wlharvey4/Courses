@@ -2,7 +2,7 @@
 
 @c ==================================================
 @c NAME:    Algorithmic Design and Techniques
-@c VERSION: 2018-08-10 VERSION 0.0.1
+@c VERSION: 2018-08-10 VERSION 0.0.2
 @c DESC:    https://www.edx.org/course/algorithmic-design-techniques-uc-san-diegox-algs200x
 @c BY:      LOLH
 @c NOTES:   
@@ -135,7 +135,7 @@ This is Edition @value{EDITION} of @cite{@value{TITLE}}.
 @titlepage
 
 @title @value{TITLE}
-@subtitle @value{SUBTITLE}
+@subtitle @value{SUBTITLE} --- Edition @value{EDITION} (@value{UPDATE-MONTH})
 @c @subtitle Additional Subtitle
 @author @value{AUTHOR}
 
@@ -427,10 +427,217 @@ as download it as a pdf.
 @url{https://courses.edx.org/courses/course-v1:UCSanDiegoX+ALGS200x+2T2017/pdfbook/0/,
 Link to Class Textbook}
 
-@node Challenge 1-1 Sum of Two Digits
+@node Automated Grading System
+@subsection Automated Grading System
+@cindex grading system, automated
+
+To introduce you  to our automated grading system, we  will discusstwo simple
+programming challenges and walk you  through a step-by-stepprocess of solving
+them.  We will encounter several common  pitfalls andwill show you how to fix
+them.
+
+Below is a brief overview of what it takes to solve a programming chal-lenge
+in five steps:
+
+@table @b
+@item Reading problem statement.
+The problem statement specifies the  input-output format, the constraints for
+the input data as well as time and memory limits. Your goal is to implement a
+fast program  that solves the  problem and works  within the time  and memory
+limits.
+@item Designing an algorithm.
+When the problem  statement is clear, start designing an  algorithm and don’t
+forget to prove that it works correctly.
+@item Implementing an algorithm.
+After  you developed  an algorithm,  start implementing  it in  a programming
+language of your choice.
+@item Testing and debugging your program.
+Testing is the art of revealing  bugs.  Debugging is the art of exterminating
+the bugs.  When your program is ready,  start testing it!  If a bug is found,
+fix it and test again.
+@item Submitting your program to the grading system.
+After testing  and de-bugging your program,  submit it to the  grading system
+and  wait for  the message  ``Good job!''.   In the  case you  see a  different
+message, return back to the previous stage.
+@end table
+
+@node 1-1 Sum of Two Digits
 @section Programming Challenge 1-1: Sum of Two Digits
-@cindex Programming Challenge 1-1
+@cindex Programming Challenge 1-1 Sum of Two Digits
 @cindex Sum of Two Digits, Programming Challenge 1-1
+
+@cartouche
+@b{Sum of Two Digits Problem}@*
+@i{Compute the sum of two single digit numbers.}
+@table @b
+@item Input:
+Two single digit numbers.
+@item Output:
+The sum of these numbers
+@end table
+@end cartouche
+
+We start  from this ridiculously simple  problem to show you  the pipeline of
+reading  the  problem statement,  designing  an  algorithm, implementing  it,
+testing and debugging your program, and submitting it to the grading system.
+
+@heading Reading Problem Statement
+
+@table @b
+@item Input format:
+Integers @code{a} and @code{b} on the same line (separated by a space).
+@item Output format:
+The sum of @code{a} and @code{b}.
+@item Constraints:
+@code{0 @leq a, b @leq 9}.
+@item Sample:
+@format
+Input:
+@code{9 7}
+Output:
+@code{16}
+@end format
+@item Time limits (sec.):
+@multitable {C} {C++} {Java} {Python} {Haskell} {JavaScript} {Scala}
+@headitem C @tab C++ @tab Java @tab Python @tab Haskell @tab JavaScript @tab Scala
+@item
+1 @tab 1 @tab 1.5 @tab 5 @tab 2 @tab 5 @tab 3
+@end multitable
+@item Memory limit:
+512 Mb.
+@end table
+
+@node Implementing an Algorithm
+@subsection Implementing an Algorithm
+@cindex implementing an algorithm
+
+For this  trivial problem, we will  skip ``Designing an algorithm''  step and
+will move right to the pseudocode.
+
+@format
+@cartouche
+@sc{SumOfTwoDigits}(@i{a, b});
+return @i{a + b};
+@end cartouche
+@end format
+
+Since the  pseudocode does not  specify how  we input @code{a}  and @code{b},
+below  we provide  solutions in  @emph{C++}, @emph{Java},  and @emph{Python3}
+programming languages  as well  as recommendations  on compiling  and running
+them.  You can copy-and-paste the code to  a file, compile/run it, test it on
+a  few  datasets,  and  then  submit  (the  source  file,  not  the  compiled
+executable) to the grading system.  Needless  to say, we assume that you know
+the basics of one of programming languages that we use in our grading system.
+
+@node In C++
+@subsubsection Sum of Two Digits in C++
+@cindex Sum of Two Digits in C++
+@cindex Programming Challenge 1-1 in C++
+
+Save  this  to   a  file  (say,  @file{aplusb.cpp}),  compile   it,  run  the
+resulting executable, and enter two numbers (on the same line).
+
+@<Challenge Files Hook@>=
+APlusB := APlusB
+@
+
+@(aplusb.cpp@)=
+@<C++ Header: Include IOStream@>
+@<Programming Challenge 1-1 SumOfTwoDigits C++@>
+@
+
+@<Programming Challenge 1-1 SumOfTwoDigits C++@>=
+int main() {
+  int a = 0;
+  int b = 0;
+  std::cin >> a;
+  std::cin >> b;
+  std::cout << a + b;
+  return 0;
+}
+@
+
+@<C++ Header: Include IOStream@>=
+#include <iostream>
+
+@
+
+@node In Java
+@subsubsection Sum of Two Digits in Java
+@cindex Sum of Two Digits in Java
+@cindex Programming Challenge 1-1 in Java
+
+Save  this  to a  file  @file{APlusB.java},  compile  it, run  the  resulting
+executable, and enter two numbers (on the same line).
+
+@(APlusB.java@)=
+@<Java Import: Scanner@>
+@<Programming Challenge 1-1 SumOfTwoDigits Java@>
+@
+
+@<Programming Challenge 1-1 SumOfTwoDigits Java@>=
+class APlusB {
+  public static void main(String [] args) {
+    Scanner s = new Scanner(System.in);
+    int a = s.nextInt();
+    int b = s.nextInt();
+    System.out.println(a + b);
+  }
+}
+@
+
+@<Java Import: Scanner@>=
+import java.util.Scanner;
+
+@
+
+@<Makefile Challenges Hook@>=
+.Phony : ${JAVA_DIR}/${APlusB}.java
+${JAVA_DIR}/${APlusB}.java : tangle languages move ${JAVA_DIR} ### TODO ###
+
+.Phony : ${APlusB}.class
+${APlusB}.class : ${JAVA_DIR}/${APlusB}.class
+${JAVA_DIR}/${APlusB}.class : ${JAVA_DIR}/${APlusB}.java
+	javac ${JAVA_DIR}/${APlusB}.java
+
+.Phony : challenge1-1-java
+challenge-1-1-java : ${APlusB}.class
+	@ cd ${JAVA_DIR} && java ${APlusB}
+
+@
+
+@node In Python3
+@subsubsection Sum of Two Digits in Python3
+@cindex Sum of Two Digits in Python3
+@cindex Programming Challenge 1-1 in Python3
+
+Save this to a file (say, @file{aplusb.py}), run it, and enter two numbers on
+the  same line.   To indicate  the end  of input,  press @kbd{ctrl-d/ctrl-z}.
+(The  first   line  in   the  code   above  tells   the  grading   system  to
+use Python3 rather than Python2).
+
+@(aplusb.py@)=
+@<Use Python3@>
+@<Python3 Import: Sys@>
+@<Programming Challenge 1-1 SumOfTwoDigits Python3@>
+@
+
+@<Programming Challenge 1-1 SumOfTwoDigits Python3@>=
+input = sys.stdin.read()
+tokens = input.split()
+a = int(tokens[0])
+b = int(tokens[1])
+print(a + b)
+@
+
+@<Use Python3@>=
+Uses python3
+@
+
+@<Python3 Import: Sys@>=
+import sys
+
+@
 
 @node Challenge 1-2 Maximum Pairwise Product
 @section Programming Challenge 1-2: Maximum Pairwise Product
@@ -484,20 +691,22 @@ Link to Class Textbook}
 @<Makefile Tangle@>
 @<Makefile Weave@>
 @<Makefile Info@>
-@<Makefile Pdf@>
+@<Makefile PDF@>
 @<Makefile Clean@>
 @<Makefile Dist Clean@>
 @<Makefile Directory Creation@>
-@<Makefile Move Hook@>
-@<Makefile Move JS To Source@>
-@<Makefile Move HTML@>
+@<Makefile Move Files@>
+@<Makefile Challenges@>
 @
+
 @node Makefile Constants
 @appendixsubsec Makefile Constant Definitions
 
 @<Makefile Constants@>=
 @<Makefile Directory Definitions@>
 @<Makefile Filename Definitions@>
+@<Makefile Language Files Definitions@>
+@<Makefile Garbage Files Definitions@>
 @
 
 @node Directory Definitions
@@ -506,9 +715,14 @@ Link to Class Textbook}
 @<Makefile Directory Definitions@>=
 PREFIX := .
 SOURCE_DIR := ${PREFIX}/src
-PUBLIC_DIR := ${PREFIX}/public
-HTML_DIR := ${PREFIX}/html
+CHALLENGES_DIR := ${SOURCE_DIR}/challenges
+CPLUSPLUS_DIR := ${CHALLENGES_DIR}/c++
+JAVA_DIR := ${CHALLENGES_DIR}/java
+PYTHON3_DIR := ${CHALLENGES_DIR}/python3
 
+@
+
+@<Makefile Directory Definitions Hook@>=
 @
 
 @node Filename Definitions
@@ -523,13 +737,41 @@ PDF_FILENAME  := ${FILENAME}.pdf
 
 @
 
+@node Language Files
+@appendixsubsubsec Makefile Language Files Definitions
+
+@<Makefile Language Files Definitions@>=
+LANGUAGE_FILES := {cpp,java,py}
+
+@<Challenge Files Hook@>
+@
+
+@<Challenge Files Hook@>=
+@
+
+@node Garbage Files
+@appendixsubsubsec Makefile Garbage Files Definitions
+
+@<Makefile Garbage Files Definitions@>=
+GARBAGE := {aux,cp,cps,toc}
+
+@
+
 @node Makefile Default Targets
 @appendixsubsec Makefile Default Targets
 
 @<Makefile Default Targets@>=
 .Phony : all
-all : tangle weave
+all : meta create move clean
 
+.Phony : meta
+meta : tangle weave pdf-only
+
+.Phony : move
+move : move-challenges-to-source
+
+.Phony : create
+create : languages
 @
 
 @node Makefile Tangle
@@ -566,15 +808,26 @@ ${INFO_FILENAME} : ${TEXI_FILENAME}
 
 @
 
-@node Makefile Pdf
+@node Makefile PDF
 @appendixsubsubsec Makefile Pdf
 
-@<Makefile Pdf@>=
-.Phony : pdf
-pdf : ${PDF_FILENAME}
+@<Makefile PDF@>=
+@<Makefile Pdf-Only@>
+@<Makefile Pdf-Open@>
+@
 
+@<Makefile Pdf-Only@>=
+.Phony : pdf-only
+pdf-only : ${PDF_FILENAME}
 ${PDF_FILENAME} : ${TEXI_FILENAME}
 	pdftexi2dvi ${TEXI_FILENAME}
+
+@
+
+@<Makefile Pdf-Open@>=
+.Phony : pdf-open
+.Phony : pdf
+pdf-open pdf : pdf-only
 	open ${PDF_FILENAME}
 
 @
@@ -589,6 +842,7 @@ ${PDF_FILENAME} : ${TEXI_FILENAME}
 .Phony : clean
 clean :
 	rm -f *~
+	rm -f *.${GARBAGE}
 
 @
 
@@ -600,7 +854,10 @@ clean :
 dist-clean : clean
 	rm -f ${FILENAME}.texi
 	rm -f *.info
+	rm -f *.${LANGUAGE_FILES}
 	rm -f ${FILENAME}.{??,???}
+	rm -fr ${SOURCE_DIR}
+
 @
 
 @node Makefile Directory Creation
@@ -611,18 +868,33 @@ dist-clean : clean
 ${SOURCE_DIR} :
 	mkdir -p ${SOURCE_DIR}
 
-.Phony : ${PUBLIC_DIR}
-${PUBLIC_DIR} :
-	mkdir -p ${PUBLIC_DIR}
+.Phony : ${CHALLENGES_DIR}
+${CHALLENGES_DIR} : ${SOURCE_DIR}
+	mkdir -p ${CHALLENGES_DIR}
 
-.Phony : ${HTML_DIR}
-${HTML_DIR} :
-	mkdir -p ${HTML_DIR}
+.PHONY : languages
+languages : ${CHALLENGES_DIR}
+	mkdir -p ${CPLUSPLUS_DIR}
+	mkdir -p ${JAVA_DIR}
+	mkdir -p ${PYTHON3_DIR}
 
+@
+
+@<Makefile Directory Creation Hook@>=
 @
 
 @node Makefile Move Targets
 @appendixsubsec Makefile Move Targets
+
+The Makefile Move Targets section moves all files into place, starting with
+the Move Hook.
+
+@<Makefile Move Files@>=
+@<Makefile Move Hook@>
+@<Makefile Move Challenges To Source@>
+@<Makefile Move JS To Source@>
+
+@
 
 @node Makefile Move Hook
 @appendixsubsubsec Makefile Move Hook
@@ -634,24 +906,32 @@ code block moving all .js files to Source.
 @<Makefile Move Hook@>=
 @
 
+@node Make Move Challenges
+@appendixsubsubsec Makefile Move Challenges
+
+@<Makefile Move Challenges To Source@>=
+.Phony : move-challenges-to-source
+move-challenges-to-source : ${CHALLENGES_DIR}
+	find ${PREFIX} -depth 1 -name \*.cpp -exec mv {} ${CPLUSPLUS_DIR} \;
+	find ${PREFIX} -depth 1 -name \*.java -exec mv {} ${JAVA_DIR} \;
+	find ${PREFIX} -depth 1 -name \*.py -exec mv {} ${PYTHON3_DIR} \;
+@
+
 @node Makefile Move JS
 @appendixsubsubsec Makefile Move JS To Source
 
 @<Makefile Move JS To Source@>=
 .Phony : move-js-to-source
 move-js-to-source : | ${SOURCE_DIR}
-	find ${PREFIX} -depth=1 -name \*.js -exec mv {} ${SOURCE_DIR} \;
+	find ${PREFIX} -depth 1 -name \*.js -exec mv {} ${SOURCE_DIR} \;
 
 @
 
-@node Makefile Move HTML
-@appendixsubsubsec Makefile Move HTML
+@node Makefile Challenges
+@appendixsubsec Makefile Compile Challenges
 
-@<Makefile Move HTML@>=
-.Phony : move-html
-move-html : | ${HTML_DIR}
-	find ${PREFIX} -depth=1 -name \*.html -exec mv {} ${HTML_DIR}\;
-
+@<Makefile Challenges@>=
+@<Makefile Challenges Hook@>
 @
 
 @node Code Chunk Summaries
