@@ -2,16 +2,14 @@
 
 @c ==================================================
 @c NAME:    CYB003x.twjr
-@c VERSION: 2018-08-09 VERSION 0.0.1|
+@c VERSION: 2018-08-09 VERSION 0.1.0
 @c DESC:    UWashingtonX: CYB003x Building a Cybersecurity Toolkit
 @c BY:      LOLH
 @c NOTES:   https://courses.edx.org/courses/course-v1:UWashingtonX+CYB003x+2T2018/course/
 @c ==================================================
 
 @c %**start of header
-@c edit
 @setfilename CYB003x.info
-@c edit
 @settitle Building a Cybersecurity Toolkit
 @c %**end of header
 
@@ -1312,11 +1310,266 @@ additional assurance features might be included in A2 requires further study.
 @node Module 2 - Basic Knowledge Units
 @chapter Module 2 - Basic Knowledge Units
 
+@node Resources
+@section Resources on Knowledge Units
+
+Review the  following resources  before proceeding to  the video  lecture, in
+order to get an high-level view of the idea of emerging educational standards
+in cybersecurity and why these efforts are important.
+
+@itemize
+@item
+@url{https://www.nsa.gov/resources/educators/centers-academic-excellence/cyber-defense/,
+National Centers of Academic Excellence in Cyber Defense (NSA|CSS)}
+
+is a jointly sponsored program by the Department of Homeland Security and the
+National  Security Agency  to  promote higher  education  standards in  cyber
+security.   Note  the  @url{https://www.nsa.gov/resources/students/,Resources
+for Students page}
+
+@item
+The web  site of the @url{https://www.caecommunity.org/,  Centers of Academic
+Excellence (CAE) in Cybersecurity} community shows how institutions that have
+undergone  in-depth  assessment  and  have met  requirements  for  Center  of
+Academic Excellence  Designation collaborate to promote  quality education of
+future cyber professionals in many ways.
+
+@item
+Explore this page  on the CAE web site that  outlines categories of knowledge
+in a very visual way. @url{https://www.caecommunity.org/resources/ku-cards}
+@end itemize
+
+What is  your main  takeaway from  your exploration? Did  it lead  to further
+questions? Did it edify anything you were thinking about with respect to next
+steps in your education?
+
+@node Knowledge Units
+@section Video by David Aucsmith on Basic Knowledge Units for Cyber Education
+
+Questions often asked:
+@quotation
+What is cyber security?   If you want to be a cyber  security person, what do
+you need?  What do you do?  Does it require a computer science degree?
+@end quotation
+
+Better  term would  be  ``cyber professional''.   It  is both  an  art and  a
+science.   The science  is  very  frequently computer  science.   The art  is
+something  different: understanding  how  systems are  attacked, how  they're
+managed, hot to evaluate risk, how to architect them.
+
+It's not necessary to approach computer security from a technical standpoint.
+There are those who manage computer security; they may have business degrees,
+system analysis  degrees; they may have  other degrees.  The people  who come
+from  the other  side can  add value  to computer  security by  understanding
+computer  security  context  in  the larger  business  sense.   For  example,
+understanding  business processes,  how breaches  or faults  in a  particular
+process  constitutes a  set  of risks,  and  how to  manage  those risks  and
+mitigate  those risks.   What data  should be  kept about  people.  That's  a
+business decision;  you have to weigh  the risk relating to  that information
+being disclosed.  That's  not a technical thing, but rather  a combination of
+business, practice, and law.
+
+On the technical side, the more technical you are, the better.  Having a
+computer science degree does not necessarily give one the knowledge  about
+how systems are attacked or how systems can be defended, both of which are
+critically important.
+
+Among both groups, there are some fundamental things that one probably should
+know to get anywhere in computer security, and general study can probably get
+one there.  One  needs to know and understand what  security technology there
+is available now (such as firewalls,  or spam filters), how they work roughly
+(not to great  technical lengths), what their  advantages, disadvantages are,
+what their weaknesses are, what their  strengths are.  You could look at that
+both in the  hardware context around normal  computer security functionality,
+but  also  as  the  business  processes  on how  do  I  actually  develop  an
+indentification and authentication process within  a company or business, and
+what the procedural weaknesses there are.
+
+If you  do go  through a  technical track,  then you  need to  understand how
+hardware works, what its  limitations are, what it can and  cannot do, how to
+go about  programming it.   As a minimum,  you certainly have  to be  able to
+program at least to some extent, even if its just shell code.  You have to be
+able to  understand how  tools work and  how to write  tools, and  what those
+tools can and  cannot give you.  The more  study you have all the  way to the
+internals of the operating system itself, the better prepared you will be.
+
+It's  useful to  understand  in terms  of software  how  compilers work,  for
+example, because it turns out that how  code is laid down in software and how
+it's put  into hardware frequently  that's where programming erros  occur and
+make things available that should not be to outside entities.
+
+You have  to understand  the basics  of networking, what  you can  and cannot
+connect, why you should  be wary of some things, what  is truly available and
+not available.  A simple  example is that a lot of data  that is stolen these
+days --- the higher end type of data exfiltration --- uses odd protocols as a
+way of  shipping data out.  For  example, packing stuff in  DNS.text records.
+You have to understand what DNS is, what the options are, and then if you are
+monitoring a  network, looking  at that  option and going  that's a  very odd
+thing to  have happened because we  shouldn't be using that  option from this
+institution.
+
+So it's a combination of technical experience and business experience that is
+the best piece of computer security.  The question remains how one goes about
+getting all of  that.  You can get the technical  training from a university,
+as well  as business degrees.   But the bit about  knowing where to  look and
+what to look  for --- the artifacts of attacks,  for example, how adversaries
+will attack your system, how they will move around in it --- that is the art,
+and  it's teachable.   Traditionally the  only people  that taught  that were
+governments,  either  the  intelligence  communities, or  the  militaries  of
+governments.  Now  there are some organizations  that practice that art  in a
+commercial sense---typically large financial institutions, telecommunications
+providers, the computer companies (Microsoft, Google, Amazon, etc.).  You can
+go there to ``apprentice'' to learn them.
+
 @node Module 3 - Risk Data Tools
 @chapter Module 3 --- Rist, Data, and Tools
 
+Watch three lectures on ``Risk and Data Analytics, and Tools.''
+
+@node Risk Assessment
+@section Risk Assessment and Management
+
+@heading What is a Risk? How do you Evaluate a Risk?
+
+Discussion of types of risk:
+
+@itemize
+@item
+business risk
+@item
+brand or reputation risk
+@item
+legal risk
+@item
+fiduciary risk
+@item
+technical risk
+@itemize
+@item
+complications of technical risk
+@item
+using more
+@item
+management complexity for increased security
+@item
+training risks for increased security
+@item
+understanding the information we get
+@item
+understanding how useful the information is that we get
+@item
+risks in using outdated (old) software or hardware
+@item
+risks in unobvious places: embedded systems risks
+@end itemize
+@end itemize
+
+@node Data Analytics
+@section Data Analytics
+
+Big data is looking at a lot of data in relation to some hypothesis, being
+wary of preconceived biases.  There may be a machine learning piece that goes
+into the analysis.
+
+However, computer security is not a random event, as are many events in
+nature; rather, it is a deliberate attack.  There is a problem with machine
+learning in relation to deliberate movements.  For example, it is possible
+for an adversary to know your algorithms and to specifically design attacks
+to outwit them.  In higher-end security, the adversary will often do
+reconnaisance on your systmes and they will build their systems to defeat
+them.
+
+Collecting data is also a fragile endeavor; data can be missed, or
+mis-interpreted, etc.  There can be over reliance on pieces that aren't
+actually crucial.
+
+@node Tools
+@section Tools
+
+Tools do one of two things:
+
+@enumerate
+@item
+perform a function that humans can't
+@item
+perform a repetitious job
+@end enumerate
+
+There is an affinity for obtaining the newest and coolest @i{shiny objects}
+in industry.
+
+Need to set up a workflow for security tool decisions.
+
+@itemize
+@item
+identify the steps
+@item
+identify what you will be getting from the steps
+@item
+identify the data
+@item
+identify how that will help you make a decision
+@end itemize
+
+There are no silver bullets; there is no one thing that can be run on a
+system and eliminate all risks.  For example, anti-virus tools are
+@emph{necessary} but not @emph{sufficient}.
+
 @node Module 4 - Threat Intelligence
 @chapter Module 4 --- Threat Intelligence and the Hunt
+
+Watch two videos.
+
+@node On Threat Intelligence
+@section On Threat Intelligence
+
+One of the biggest changes in the technical industries in the last 5 years is
+the @emph{professionalization of cyber crime}.  There still exists the
+annoyances of those breaking in because they can or simply want to make
+statement.  What is becoming more and more common is crime as a motive for
+breaking into computer systems.  Those people have evolved over time into a
+professional criminal organization instead of individualized attacks.  By
+professionalization, is meant a @emph{horizontalization} of activities.
+
+How to defend against professional cyber criminals.  The Internet in its
+design has no system to authenticate or identify.  Criminal prosecutions must
+be good at attribution, which is a difficult thing to do.  The way to protect
+yourself is essentially to think like your adversary: @emph{threat
+intelligence}.  There are two types:
+
+@enumerate
+@item
+threat information: identify a group, or tools
+@item
+true threat intelligence: look at your own organization and think like a bad
+guy
+@end enumerate
+
+Not all systems must be equally defended.  Need to figure out what it is of
+value that you really own, and need to protect.  Need to write a @emph{threat
+proposal} on how you would attack the system and what you would target.  That
+drives how you will spend your time and resources defending your system, and
+what things you will look for as artifacts of attack.
+
+@node The Hunt
+@section ``The Hunt''
+
+``The Hunt'' is a term of art that is frequently misused.  Originally from
+the NSA, it describes the search for a bad guy in your computer system.
+
+In its more current form, it is defending a system by studying it and
+anticipating points and methods of breach, and then defending these.   They
+will look at the system using the trade craft of an adversary.  They are not
+going on offense, i.e., ``hunting'', but using the knowledge of offense to be
+very aggressive about defense.  It is really about using humans to hunt for
+other humans in a system.  One of the advantages of hunting is that it can't
+be trained against by the adversary.  The adversary basically cannot truly
+predict where that human will be or what that human will be doing at any
+particular time.
+
+@strong{Computer Frauds and Abuse Act}
+
+Self defense
 
 @node Summary
 @unnumbered Course Summary
