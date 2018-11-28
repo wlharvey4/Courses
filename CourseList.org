@@ -1,0 +1,554 @@
+#+TITLE: Course List
+#+OPTIONS: ':nil *:t -:t ::t <:t H:4 \n:nil ^:t arch:headline author:t
+#+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+DATE: <2018-11-27 Tue>
+#+AUTHOR: WLHarvey4
+#+EMAIL: wlharvey4@mac.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.1 (Org mode N/A-fixup)
+
+
+* Algorithms and Data Structures
+
+** Advanced Algorithms in Java
+[[https://www.udemy.com/advanced-algorithms-in-java/][Advanced Algorithms in Java]]
+
+*** About
+Breadth-first search,  depth-first search,  shortest path,  arbitrage, strongly
+connected components and graph algorithms
+
+*** Description
+This course is about advanced  algorithms focusing on graph traversal, shortest
+path  problems, spanning  trees and  maximum flow  problems and  a lots  of its
+applications  from Google  Web  Crawler  to taking  advantage  of stock  market
+arbitrage situations.
+
+The course is going  to take approximately 10 hours to  completely but I highly
+suggest you typing  these algorithms out several  times in order to  get a good
+grasp of it. You  can download the source code of the whole  course at the last
+lecture.
+
+You should definitely take this course if you are interested in advanced topics
+concerning algorithms. There  are a bunch of fields where  these methods can be
+used: from software engineering to scientific research.
+
+*** Expected Outcomes
+   + Learn about the applications of data structures
+   + Implement advanced algorithms efficiently
+   + Able to move towards advanced topics such as machine learning or big data analysis
+   + Get a good grasp of algorithmic thinking
+   + Get to know graph algorithms: BFS, DFS, shortest paths and spanning trees
+
+*** Syllabus
+
+**** Section 1
+   + the basic graph traversal algorithm
+   + breadth-first search algorithm
+   + depth-first search algorithm
+**** Section 2
+   + shortest path algorithms
+   + Dijkstra's algorithm
+   + Bellman-Ford algorithm
+**** Section 3
+   + what are spanning trees
+   + union find data structures
+   + Kruskal's algorithm
+   + Prim's algorithm
+**** Section 4
+   + what are strongly connected components
+   + Kosaraju algorithm
+   + Tarjan algorithm
+**** Section 5
+   + The famous maximum flow problem
+   + how to reduce most of the hard problems to maximum flow problem
+   + Ford-Fulkerson algorithm
+   + bipartite matching problem
+**** Section 6
+   + travelling salesman problem (TSP)
+   + how to deal with NP-hard problems
+   + using meta-heuristics: tabu search and simulated annealing
+
+*** Requirements
+   + Core Java
+   + Eclipse IDE
+   + Internet connection
+   + Basic knowledge of data structures
+
+*** Instructor
+My name  is Balazs Holczer. I  am from Budapest,  Hungary. I am qualified  as a
+physicist.  At  the  moment  I  am  working  as  a  simulation  engineer  at  a
+multinational company. I have been interested in algorithms and data structures
+and its  implementations especially in  Java since  university. Later on  I got
+acquainted with machine learning techniques, artificial intelligence, numerical
+methods and  recipes such  as solving  differential equations,  linear algebra,
+interpolation  and  extrapolation. These  things  may  prove  to be  very  very
+important in several fields: software  engineering, research and development or
+investment banking. I  have a special addiction to quantitative  models such as
+the Black-Scholes model, or the Merton-model.
+
+See [[https://www.globalsoftwaresupport.com/][Algorithms  Data Structures and  Artificial Intelligence]] for some  free and
+not free courses.
+
+** Data Structures and Algorithms --- Deep Dive Using Java
+[[https://www.udemy.com/data-structures-and-algorithms-deep-dive-using-java/][Deep Dive Using Java]]
+
+*** About
+Learn about  Arrays, Linked  Lists, Trees,  Hashtables, Stacks,  Queues, Heaps,
+Sort algorithms and Search algorithms.
+
+ + Skill level:: Intermediate Level
+ + Lectures:: 115
+ + Video:: 16 hours
+
+*** Description
+So you've worked with the basics of  data structures and algorithms in Java (or
+another OO programming  language) but feel like you need  a deeper knowledge of
+how things work.
+
+Maybe you have  taken other courses on  this topic that focus  more on teaching
+how to pass  job interview tests (theory)  instead of how to  make good choices
+for the programs you develop (implementation).
+
+Or maybe  you are ready to  move from a  junior programming position to  a more
+senior one and  need to get skilled in advanced  concepts like data structures,
+and how to apply them to your own projects.
+
+Whatever  the reason,  if  you are  looking  for  a course  that  focus on  the
+implementations to give  you a complete understanding of how  things work, then
+this is the course for you.
+
+This course goes over the theory of how  things work, but only to give you what
+you need to know to understand the implementation covered.
+
+Complete source code is included and available for you to download.
+
+This is  a hands-on course!   If you  want to try  understand things at  a deep
+level, and work on implementations, rather than theory, then again, this is the
+course for you.
+
+The course also spends more time than most other courses of its kind looking at
+what’s available  in the JDK.  Students wanting  to understand how  things work
+"under the hood" will benefit enormously from this course.
+
+*** Topics
++ Arrays
++ Linked Lists
++ Trees
++ Hashtables
++ Stacks
++ Queues
++ Heaps
++ Sort algorithms
++ Search algorithms
+
+*** Why Learn
+The reality  is, the more you  learn about data structures  and algorithms, the
+better a programmer you become.
+
+Why?
+
+Because, data  structures and algorithms  are effectively patterns  for solving
+problems.  You want  to add as many of  them as you can to  your skill-set.  By
+doing so, you  will find you solve  more problems, and use the  right tools for
+the job,  in a more  elegant way.  And  you will learn a  heap of them  in this
+course.
+
+*** Why This Course
+Your  instructor,  Sarah  Ettritch  has over  25  years’  software  development
+experience and has  been working with Java  since JDK 1.1.  She  has spent many
+years creating  tools used by  developers, which  required a deep  knowledge of
+data  structures and  algorithms,  and  is perfectly  qualified  to teach  this
+course.
+
+Most courses focus on giving you the theory of how things work, so that you can
+take an  interview.  Whilst the  theory is important,  the knowledge of  how to
+implement these data structures and algorithms are of vital importance.
+
+This course goes over the theory of how  things work, but only to give you what
+you need to  know to understand the implementation covered.   The main focus of
+the course  is to give you  a real understanding  of how things work  under the
+hood, so that you can apply this to future programming projects.
+
+If you want  to actually understand how  things work, and be able  to take that
+understanding and apply it to your own programs, then this course is for you.
+
+*** Course Goals
+After  completing this  course, you  will have  a solid  understanding of  data
+structures and algorithms (both the theory, and the implementation).
+
+ + Learn the strengths  and weaknesses of a variety of  data structures, so you
+   can choose the best data structure for your data and applications
+ + Code  an implementation of each  data structure, so you  understand how they
+   work under the covers
+ + Learn  many  of  the  algorithms  commonly  used  to  sort  data,  so  your
+   applications will perform efficiently when sorting large datasets
+ + Learn what’s available in the JDK for storing and sorting data, so you won’t
+   waste time reinventing the wheel
+
+*** Requirements
++ Previous experience with an object-oriented programming language, preferably
+  Java (but any OO language is fine).
+
+*** Instructor
+Sarah Ettritch  has a  computer science  degree and over  25 years  of software
+development experience. She has worked for large and small companies, including
+IBM, Quest Software, and SunLife of Canada.
+
+Sarah spent  most of  her career  working on  tools for  developers—a demanding
+audience!  She  has worked  on  the  development  teams for  several  products,
+including a  compiler and a  Java profiler,  and has extensive  experience with
+Java, Swing, and JavaFX.
+
+She loves picking up programming languages and frameworks, and she’s constantly
+learning new  skills. When Sarah  isn’t programming or learning,  she’s usually
+reading, writing, or playing computer games.
+
+** Data Structure and Algorithms Analysis - Job Interview
+[[https://www.udemy.com/data-structure-and-algorithms-analysis/][DS&A Analysis]]
+
+*** About
+Write code that  run faster, use less memory and  prepare for Software Engineer
+Job Interview
+
+ + Skill level:: Beginner Level
+ + Lectures:: 82
+ + Video:: 10 hours
+
+*** Description
+This  course prepared  depending on  my real  Software Engineer  job interviews
+experiences with Google, Microsoft, Amazon, and Snapchat.
+
+In  this  course you  will  learn  how  to  Analysis algorithms  like  Sorting,
+Searching, and Graph algorithms. And how to reduce the code complexity from one
+Big-O level  to another level.  Furthermore, you  will learn different  type of
+Data Structure for your  code. Also you will learn how to  find Big-O for every
+data structure,  and how  to apply  correct Data Structure  to your  problem in
+Java. By  the end you will  be able to write  code that run faster  and use low
+memory. You Also will learn how to analysis problems using Dynamic programming.
+
+We will discus code complexity  in Different algorithms like Sorting algorithms
+( Bubble, Merge, Heap, and quick  sort) , searching algorithms ( Binary search,
+linear search,  and Interpolation),  Graph algorithms(  Binary tree,  DFS, BFS,
+Nearest   Neighbor   and   Shortest   path,  Dijkstra's   Algorithm,   and   A*
+Algorithm). and Data  Structure like Dynamic Array, Linked  List, Stack, Queue,
+and Hash-Table
+
+*** Requirements
+ + No  previous programming experience is  required! I will give  you free Java
+   course  if you  do not  have  programming experiences  with any  programming
+   languages
+ + You  will need  a computer  running Microsoft  Windows, or  Linux, or  a Mac
+   running OS X.
+
+*** Course Goals
+ + Write code that run faster, and use less memory
+ + Prepare for job interview
+ + Learn Data Structure and how to apply these Data Structures on problems in Java
+ + Learn algorithms analysis and implementation.
+ + Learn problem solving strategies
+ + Learn how to find complexity of code and algorithms
+ + Write code that run faster, and use less memory
+ + Prepare for job interview
+ + Learn Data Structure and how to apply these Data Structures on problems in Java
+ + Learn algorithms analysis and implementation.
+ + Learn problem solving strategies
+ + Learn how to find complexity of code and algorithms
+
+*** Instructor
+Hussein Al Rubaye --- Software Engineer and Developer
+
+I  am PhD  student and  i have  master in  Software engineering  from Rochester
+Institute  of Technology  in US,  my interesting  area is  teaching programming
+languages to develop  mobile,Windows, and web apps. I am  working as researcher
+to improve  programming skills, So i  want to find  best and easy way  to learn
+programming. Currently  i am working  as Software  Engineer for Xerox.   I have
+apps in Google play,Microsoft store, and  Apple Store. I have more than million
+users who  are using my apps.  Also I have  many tutorials on YouTube  to teach
+programming languages. Because  of my contribution in teaching  programming , i
+Got  Microsoft Most  Valuable  Professional (MVP)  for 2017.  For  more see  my
+website.
+
+** Master the Coding Interview --- Data Structures and Algorithms
+[[https://www.udemy.com/master-the-coding-interview-data-structures-algorithms/][DS&A Coding Interview]]
+
+*** About
+Ace your coding  interview, get more job offers, negotiate  a raise: Everything
+you need to get the job you want!
+
+*** Description
+Want to land  a job at a  great tech company like  Google, Microsoft, Facebook,
+Netflix, Amazon,  or other companies but  you are intimidated by  the interview
+process and  the coding questions?  Do you find  yourself feeling like  you get
+"stuck"  every time  you  get asked  a  coding question?  This  course is  your
+answer. Using the  strategies, lessons, and exercises in this  course, you will
+learn how to land offers from all sorts of companies.
+
+Many developers who are "self taught",  feel that one of the main disadvantages
+they face  compared to college  educated graduates  in computer science  is the
+fact that they  don't have knowledge about algorithms, data  structures and the
+notorious  Big-O Notation.  Get  on the  same level  as  someone with  computer
+science degree by learning the  fundamental building blocks of computer science
+which will give you a big boost  during interviews. You will also get access to
+our private online  chat community with thousands of developers  online to help
+you get through the course.
+
+ + Skill level:: All Levels
+ + Lectures:: 245
+ + Video:: 18.5 hours
+
+*** Topics Covered
+
+ A. Technical
+    1. Big O notation
+    2. Data structures
+       + Arrays
+       + Hash tables
+       + Singly-linked lists
+       + Double-linked lists
+       + Queues
+       + Stacks
+       + Trees (BST, AVL Trees, Red Black Trees, Binary Heaps)
+       + Tries
+       + Graphs
+    3. Algorithms
+       + Recursion
+       + Sorting
+       + Searching
+       + Tree traversal
+       + Breadth-first search
+       + Depth-first search
+       + Dynamic programming
+
+ B. Non-Technical
+    + How to get more interviews
+    + How to get more interviews
+    + What do do after the interview
+    + How to answer interview questions
+    + How to handle offers
+    + How to negotiate your salary
+    + How to get a raise
+
+*** Requirements
+ + No experience with data structures or algorithms needed
+ + Basic understanding of one programming language
+ + No previous computer science knowledge necessary
+
+*** Course Goals
+ + Ace coding interviews given by some of the top tech companies
+ + Become more confident and prepared for your next coding interview
+ + Learn, implement, and use different Data Structures
+ + Learn, implement and use different Algorithms
+ + Get more interviews
+ + Professionally handle offers and negotiate raises
+ + Become a better developer by mastering computer science fundamentals
+
+*** Instructor
+Andrei Neagoie, Senior Software Developer turned Instructor
+
+Andrei is the  instructor of the highest rated Web  Development course on Udemy
+as well as one of the fastest growing.  His graduates have moved on to work for
+some of  the biggest  tech companies  around the world  like Apple,  Google, JP
+Morgan,  IBM, etc...  He has  been working  as a  senior software  developer in
+Silicon Valley and  Toronto for many years,  and is now taking all  that he has
+learned,  to teach  programming skills  and to  help you  discover the  amazing
+career opportunities that being a developer allows in life.
+
+Having  been  a  self  taught  programmer, he  understands  that  there  is  an
+overwhelming  number of  online courses,  tutorials and  books that  are overly
+verbose and  inadequate at teaching  proper skills. Most people  feel paralyzed
+and don't know where  to start when learning a complex  subject matter, or even
+worse,   most   people   don't   have    $20,000   to   spend   on   a   coding
+bootcamp. Programming skills should be affordable and open to all. An education
+material should  teach real life  skills that are  current and they  should not
+waste a student's valuable time.  Having learned important lessons from working
+for Fortune 500 companies, tech startups, to even founding his own business, he
+is  now dedicating  100%  of  his time  to  teaching  others valuable  software
+development  skills in  order to  take control  of their  life and  work in  an
+exciting industry with infinite possibilities.
+
+Andrei promises you that there are  no other courses out there as comprehensive
+and as well  explained. He believes that  in order to learn  anything of value,
+you need to start  with the foundation and develop the roots  of the tree. Only
+from there will you be able  to learn concepts and specific skills(leaves) that
+connect to the foundation. Learning becomes exponential when structured in this
+way.
+
+Taking his  experience in educational  psychology and coding,  Andrei's courses
+will take  you on an understanding  of complex subjects that  you never thought
+would be possible.
+
+** Break Away --- Programming And Coding Interviews
+[[https://www.udemy.com/break-away-coding-interviews-1/][Programming and Coding Interviews]]
+
+*** About
+A course that  teaches pointers, linked lists,  general programming, algorithms
+and recursion like no one else
+
+*** Description
+Programming interviews are like standard  plays in professional sport - prepare
+accordingly. Don't let Programming Interview gotchas get you down!
+ + Programming  interviews  differ  from  real  programming  jobs  in  several
+   important aspects,  so they merit  being treated differently, just  like set
+   pieces in sport.
+ + Just like teams prepare for their opponent's playbooks in professional
+   sport, it makes sense for you to approach programming interviews
+   anticipating the interviewer's playbookJust like teams prepare for their
+   opponent's playbooks in professional sport, it makes sense for you to
+   approach programming interviews anticipating the interviewer's playbook
+ + This course  has  been drawn  by  a  team that  has  conducted hundreds  of
+   technical interviews at Google and Flipkart
+
+ + Skill level:: All Levels
+ + Lectures:: 84
+ + Video:: 20 hours
+
+*** Course Content
+ + Pointers:: Memory  layout of  pointers and  variables, pointer  arithmetic,
+  arrays, pointers  to pointers, pointers  to structures, argument  passing to
+  functions, pointer reassignment and modification  - complete with visuals to
+  help you conceptualize how things work.
+ + Strings:: Strings, Character pointers, character arrays, null termination of
+   strings, string.h function implementations with detailed explanations.
+ + Linked lists:: Visualization, traversal,  creating or deleting nodes, sorted
+   merge, reversing a linked list and  many many problems and solutions, doubly
+   linked lists.
+ + Bit Manipulation:: Work with bits and bit operations.
+ + Sorting  and  searching  algorithms::  Visualize  how  common  sorting  and
+  searching algorithms work and the speed and efficiency of those algorithms
+ + Recursion::  Master recursion with lots  of practice! 8 common  and uncommon
+   recursive  problems  explained. Binary  search,  finding  all subsets  of  a
+   subset,  finding all  anagrams of  a word,  the infamous  8 Queens  problem,
+   executing  dependent tasks,  finding  a path  through  a maze,  implementing
+   PaintFill, comparing two binary trees
+ + Data Structures:: Understand queues,  stacks, heaps, binary trees and graphs
+   in detail along  with common operations and their  complexity. Includes code
+   for every data structure along with solved interview problems based on these
+   data structures.
+ +  Step-by-step   solutions  to   dozens  of  common   programming  problems::
+   Palindromes,  Game  of Life,  Sudoku  Validator,  Breaking a  Document  into
+   Chunks,  Run Length  Encoding,  Points within  a distance  are  some of  the
+   problems solved and explained.
+
+*** Requirements
+This  course  requires some  basic  understanding  of a  programming  language,
+preferably C. Some solutions are in Java, though Java is not a requirement
+
+*** Course Goals
+ + Know how to approach and prepare for coding interviews
+ +  Understand pointer  concepts  and  memory management  at  a  very deep  and
+   fundamental level
+ + Tackle a  wide variety of linked  list problems and know how  to get started
+   when asked linked list questions as a part of interviews
+ + Tackle a wide variety of general pointer and string problems and know how to
+   answer questions on them during interviews
+ + Tackle  a wide variety  of general  programming problems which  involve just
+   plain logic, no  standard algorithms or data structures, these  help you get
+   the details right!
+
+*** Instructors
+ + Loony  Corn:: Loonycorn is us,  Janani Ravi and Vitthal  Srinivasan. Between
+   us, we  have studied at  Stanford, been admitted  to IIM Ahmedabad  and have
+   spent  years working  in tech,  in  the Bay  Area, New  York, Singapore  and
+   Bangalore.
+ + Janani:: 7  years at Google (New York, Singapore);  Studied at Stanford; also
+   worked at Flipkart and Microsoft
+ + Vitthal:: Also Google (Singapore)  and studied at Stanford; Flipkart, Credit
+   Suisse and INSEAD too
+
+We think we might have hit upon a neat way of teaching complicated tech courses
+in a funny, practical, engaging way, which is  why we are so excited to be here
+on Udemy!
+
+** The Coding Interview Bootcamp --- Algorithms and Data Structures
+
+*** About
+Ace  your next  Javascript coding  interview by  mastering data  structures and
+algorithms.
+
+*** Description
+ + Skill level:: All Levels
+ + Lectures:: 135
+ + Video:: 13 hours
+
+Data Structures? They're  here.  Algorithms?  Covered.  Lots  of questions with
+well-explained solutions?  Yep!
+
+If you're nervous about your first  coding interview, or anxious about applying
+to your  next job, this  is the  course for you.   I got tired  of interviewers
+asking tricky  questions that can only  be answered if you've  seen the problem
+before, so  I made  this course!   This video  course will  teach you  the most
+common interview  questions that you'll see  in a coding interview,  giving you
+the tools you need to ace your next whiteboard interview.
+
+Coding  interviews are  notoriously intimidating,  but there  is one  method to
+become  a better  interviewer -  and that  is practice!   Practicing dozens  of
+interview questions  is what  makes the  difference between a  job offer  for a
+$120k USD and another  rejection email.  This course is going  to not only give
+you  dozens of  questions  to practice  on,  but  it will  also  make sure  you
+understand  the tricks  behind  solving each  question, so  you’ll  be able  to
+perform in a real interview.
+
+I have  spent many hours combing  through interview questions asked  at Google,
+Facebook, and Amazon to make sure you know how to answer questions asked by the
+most well-paying companies out there.  No stone is left unturned, as we discuss
+everything  from  the simplest  questions  all  the  way  to the  most  complex
+algorithm questions.
+
+In this course, you'll get:
+ + Clear, well-diagramed explanations for every single problem to make sure you
+   understand the solution
+ + An overview of the most important  data structures to know about.  These are
+   presented for people without a CS degree.
+ + A huge  collection of common algorithm questions,  including everything from
+   'reversing a string' to 'determine the width of a BST'
+ + Sensible strategies for tackling systems design problems
+ + Insider tips on answering what interviewers area really looking for
+ + Constant support on the Udemy Q&A forums from me!
+
+My goal in this  course is to help you defeat those  interviewers who ask nasty
+algorithm questions.  Sign up today, and  be the cutting edge engineer who will
+be prepared to get a high paying job
+
+*** Requirements
+Basic understanding of Javascript
+
+*** Course Goals
+ + Master commonly asked interview questions
+ + Tackle common data structures used in web development
+ + Practice dozens of different challenges
+ + Use Javascript to solve challenging algorithms
+
+*** Instructor
+Stephen Grider, Engineering Architect
+
+Stephen  Grider  has  been  building  complex Javascript  front  ends  for  top
+corporations in the San Francisco Bay  Area. With an innate ability to simplify
+complex topics, Stephen has been mentoring engineers beginning their careers in
+software  development for  years, and  has  now expanded  that experience  onto
+Udemy, authoring the  highest rated React course. He teaches  on Udemy to share
+the knowledge he  has gained with other software engineers.  Invest in yourself
+by learning from Stephen's published courses.
+
+* Blockchains
+
+* Coding Languages
+
+* Databases
+
+* DevOps
+
+* Interviewing
+
+* Mac & iOS
+
+* Networking
+
+* Security
+
+* Security
+
+* Web Development
